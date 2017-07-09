@@ -6,11 +6,11 @@ import ReduxThunk from 'redux-thunk';
 import reducers from './reducers';
 import Routes from './router';
 
-import '../style/test.css';
+require('../style/test.scss');
 
 console.log('hey there!!');
 const App = () => {
-  const store = createStore(reducers, {});
+  const store = createStore(() => {return {}}, {});
 
   return (
     <Provider store={store}>
