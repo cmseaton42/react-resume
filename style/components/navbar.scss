@@ -18,6 +18,8 @@
             color: black;
         }
 
+        margin: 0px 5px;
+        padding-top: 5px;
     }
 
     .active {
@@ -39,8 +41,23 @@
 
 .navbar-brand {
     font-weight: bold;
+    transform: translateY(4px);
 
     &:hover {
         cursor: default;
+    }
+}
+
+.navbar-toggler {
+    color: black;
+}
+
+@media (max-width: 790px) {
+    .navbar-brand {
+        display: none;
+    }
+
+    .nav-item {
+        text-align: center;
     }
 }

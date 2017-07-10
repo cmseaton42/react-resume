@@ -1,5 +1,29 @@
+* {
+    font-family: sans-serif;
+}
+
 html,
 body {
     width: 100%;
     height: 100%;
+}
+
+.dflex {
+    display: flex;
+}
+
+.dnone {
+    display: none;
+}
+
+.p-relative {
+    position: relative;
+}
+
+.p-absolute {
+    position: absolute;
+}
+
+.bold {
+    font-weight: bold;
 }

@@ -23,17 +23,10 @@ export default class Navbar extends Component {
     renderNavList() {
         return this.state.navList.map((item) => {
             const href = "#" + item;
+            const styles = this.state.active === item ? 'nav-item active' : 'nav-item';
 
-            if (item === this.state.active) {
-                return (
-                    <li key={item} className="nav-item active" onClick={() => { this.setState({ active: item }) }}>
-                        <a href={href} className="nav-link">{item}</a>
-                    </li>
-                )
-            }
-            
             return (
-                <li key={item} className="nav-item" onClick={() => { this.setState({ active: item }) }}>
+                <li key={item} className={styles} onClick={() => { this.setState({ active: item }) }}>
                     <a href={href} className="nav-link">{item}</a>
                 </li>
             )
@@ -43,13 +36,13 @@ export default class Navbar extends Component {
     render() {
         return (
             <div className="container-fluid cmpnt-navbar">
-                <nav className="navbar navbar-toggleable-md sticky-top">
-                    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon"></span>
+                <nav className="navbar navbar-toggleable-sm sticky-top">
+                    <button className="navbar-toggler" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="navbar">
+                        <i className="fa fa-bars" aria-hidden="true"></i>
                     </button>
-                    <div className="collapse navbar-collapse" id="navbarToggler">
-                        <span className="navbar-brand">Canaan Seaton</span>
-                        <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <div className="collapse navbar-collapse text-center" id="navbar">
+                        <span className="navbar-brand">Canaan Seaton</span>                        
+                        <ul className="nav navbar-nav ml-auto">
                             {this.renderNavList()}
                         </ul>
                     </div>
