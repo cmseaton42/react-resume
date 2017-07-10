@@ -25,7 +25,12 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        use: ['style-loader', 'css-loader', 'sass-loader']
+        use: [
+          'style-loader',
+          { loader: 'css-loader', options: { importLoaders: 1 } },
+          'sass-loader',
+          'postcss-loader',
+        ]
       }
     ]
   },
@@ -34,10 +39,12 @@ module.exports = {
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
     }),
     new webpack.optimize.CommonsChunkPlugin({
-      names: ['vendor', 'manifest']
+      names: ['vendor']
     }),
     new HtmlWebpackPlugin({
       template: 'src/index.html'
     })
   ]
 };
+
+

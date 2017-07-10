@@ -4,17 +4,15 @@ import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import ReduxThunk from 'redux-thunk';
 import reducers from './reducers';
-import Routes from './router';
+//import Routes from './router';
+import '../style/vendor/animate/animate.min.scss';
 
-require('../style/test.scss');
-
-console.log('hey there!!');
 const App = () => {
-  const store = createStore(() => {return {}}, {});
+  const store = createStore(() => {  return {}}, ['use redux']);
 
   return (
     <Provider store={store}>
-      <Routes />
+      <div className="animated infinite bounce">im bouncing</div>
     </Provider>
   );
 };
