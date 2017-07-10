@@ -6,13 +6,18 @@ import ReduxThunk from 'redux-thunk';
 import reducers from './reducers';
 //import Routes from './router';
 import '../style/vendor/animate/animate.min.scss';
+import '../style/style.scss';
+
+
+
+import Navbar from './components/navbar';
 
 const App = () => {
   const store = createStore(() => {  return {}}, ['use redux']);
 
   return (
     <Provider store={store}>
-      <div className="animated infinite bounce">im bouncing</div>
+      <Navbar />
     </Provider>
   );
 };

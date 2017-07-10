@@ -1,0 +1,46 @@
+.navbar {
+    background: transparent;
+
+    .nav-item {
+        .nav-link {
+            color: lightgray;
+
+            &:hover {
+                color: darkgrey;
+            }
+        }
+
+        &:hover {
+            border-bottom: darkgrey 3px solid;
+        }
+
+        .active {
+            color: black;
+        }
+
+    }
+
+    .active {
+        border-bottom: black 3px solid;
+
+        .nav-link, .nav-link:hover {
+            color: black;
+        }
+
+        &:hover {
+            border-bottom: black 3px solid;
+        }
+    }
+}
+
+.navbar-nav {
+    float: right;
+}
+
+.navbar-brand {
+    font-weight: bold;
+
+    &:hover {
+        cursor: default;
+    }
+}
