@@ -46,7 +46,7 @@ export default class Cover extends Component {
 
     render() {
         return (
-            <div className="cmpnt-cover p-relative">
+            <div id="Home" className="cmpnt-cover p-relative">
                 <Carousel />
                 <div className="c-greeting-outer">
                     <div className="c-greeting-inner">
