@@ -10,15 +10,22 @@ import '../style/style.scss'
 
 import Navbar from './components/navbar'
 import Cover from './components/cover'
+import DetailWIcon from './components/detail-w-icon'
 
 const App = () => {
-  const store = createStore(() => {  return {}}, ['use redux']);
+  const store = createStore(() => { return {} }, ['use redux']);
 
   return (
     <Provider store={store}>
       <div>
         <Navbar />
         <Cover />
+        <div className="d-flex flex-row flex-wrap justify-content-between w-100">
+          <DetailWIcon icon={'envelope'} caption={'cmseaton42@gmail.com'} />
+          <DetailWIcon icon={'phone'} caption={'1 (931) 446-6573'} />
+          <DetailWIcon icon={'map-marker'} caption={'5220 Stonehedge Dr, Evansville, IN 47715'} />
+        </div>
+        <hr />
       </div>
     </Provider>
   );

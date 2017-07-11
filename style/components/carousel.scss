@@ -1,10 +1,12 @@
 .slide {
-    height: 700px;
+    height: 750px;
     width: 100%;
+    overflow: hidden;
 
     .img-responsive {
         height: 100%;
         width: 100%;
+        overflow: hidden;
     }
 }
 

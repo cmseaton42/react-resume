@@ -7,8 +7,8 @@ export default class Fade extends Component {
   render() {
     const settings = {
       dots: false,
+      arrows: true,
       fade: true,
-      infinite: true,
       autoplaySpeed: 4000,
       autoplay: true,
       speed: 1000,
@@ -20,7 +20,7 @@ export default class Fade extends Component {
     };
 
     return (
-      <div className="cmpnt-carousel drelative">
+      <div className="cmpnt-carousel">
         <Slider {...settings}>
           <div className="slide"><img className='img-responsive' src='/static/images/carousel1.jpg' /></div>
           <div className="slide"><img className='img-responsive' src='/static/images/carousel2.jpg' /></div>

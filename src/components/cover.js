@@ -10,8 +10,9 @@ export default class Cover extends Component {
         this.state = {
             details: [
                 { detail: 'FRONT END DEVELOPER', style: 'animated fadeIn'},
-                { detail: 'ENGINEER', style: 'dnone'},
-                { detail: 'ALL AROUND NERD', style: 'dnone'}
+                { detail: 'FREE-LANCE ENGINEER', style: 'dnone'},
+                { detail: 'SOFTWARE ENTHUSIAST', style: 'dnone'},
+                { detail: 'SUPER NERD', style: 'dnone'}
             ],
             ptr: 0
         }

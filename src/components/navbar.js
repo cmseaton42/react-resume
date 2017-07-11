@@ -10,8 +10,7 @@ export default class Navbar extends Component {
             navList: [
                 'Home',
                 'Skills',
-                'Experience',
-                'Testemonials',
+                'Profile',
                 'Contact',
             ],
             active: 'Home'
