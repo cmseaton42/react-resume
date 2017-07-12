@@ -1,36 +1,62 @@
-.navbar {
-    background: transparent;
-
-    .nav-item {
-        .nav-link {
-            color: lightgray;
-
+.navbar-tansparent {
+    .navbar {
+        background: transparent;
+        transition: background-color 300ms linear;
+        .nav-item {
+            .nav-link {
+                color: #383838;
+            }
             &:hover {
-                color: darkgrey;
+                border-bottom: #383838 3px solid;
+            }
+            .active {
+                color: black;
+            }
+            margin: 0px 5px;
+            padding-top: 5px;
+        }
+        .active {
+            border-bottom: black 3px solid;
+            .nav-link,
+            .nav-link:hover {
+                color: black;
+            }
+            &:hover {
+                border-bottom: black 3px solid;
             }
         }
-
-        &:hover {
-            border-bottom: darkgrey 3px solid;
-        }
-
-        .active {
-            color: black;
-        }
-
-        margin: 0px 5px;
-        padding-top: 5px;
     }
+}
 
-    .active {
-        border-bottom: black 3px solid;
-
-        .nav-link, .nav-link:hover {
-            color: black;
+.navbar-solid {
+    .navbar {
+        background: white;
+        transition: background-color 400ms linear;
+        .nav-item {
+            .nav-link {
+                color: gray;
+                &:hover {
+                    color: darkgrey;
+                }
+            }
+            &:hover {
+                border-bottom: gray 3px solid;
+            }
+            .active {
+                color: black;
+            }
+            margin: 0px 5px;
+            padding-top: 5px;
         }
-
-        &:hover {
+        .active {
             border-bottom: black 3px solid;
+            .nav-link,
+            .nav-link:hover {
+                color: black;
+            }
+            &:hover {
+                border-bottom: black 3px solid;
+            }
         }
     }
 }
@@ -41,10 +67,20 @@
 
 .navbar-brand {
     font-weight: bold;
+    opacity: 1;
     transform: translateY(4px);
-
+    transition: transform 400ms linear;
     &:hover {
         cursor: default;
+    }
+}
+
+.navbar-tansparent #navbar {
+    .navbar-brand {
+        color: white;
+        opacity: 0;
+        transform: translateY(-4px);
+        transition: transform 400ms linear;
     }
 }
 
@@ -56,8 +92,39 @@
     .navbar-brand {
         display: none;
     }
-
     .nav-item {
         text-align: center;
+    }
+    .navbar-tansparent {
+        .navbar {
+            background: white;
+            transition: background-color 400ms linear;
+            .nav-item {
+                .nav-link {
+                    color: gray;
+                    &:hover {
+                        color: darkgrey;
+                    }
+                }
+                &:hover {
+                    border-bottom: gray 3px solid;
+                }
+                .active {
+                    color: black;
+                }
+                margin: 0px 5px;
+                padding-top: 5px;
+            }
+            .active {
+                border-bottom: black 3px solid;
+                .nav-link,
+                .nav-link:hover {
+                    color: black;
+                }
+                &:hover {
+                    border-bottom: black 3px solid;
+                }
+            }
+        }
     }
 }

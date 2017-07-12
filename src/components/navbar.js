@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import '../../style/components/navbar.scss';
 
+import Waypoint from 'react-waypoint'
+
 export default class Navbar extends Component {
 
     constructor() {
@@ -13,10 +15,13 @@ export default class Navbar extends Component {
                 'Profile',
                 'Contact',
             ],
-            active: 'Home'
+            active: 'Home',
+            navStyle: 'navbar-tansparent'
         }
 
         this.renderNavList = this.renderNavList.bind(this);
+        this.makeTransparent = this.makeTransparent.bind(this);
+        this.makeSolid = this.makeSolid.bind(this);
     }
 
     renderNavList() {
@@ -32,20 +37,38 @@ export default class Navbar extends Component {
         })
     }
 
+    makeTransparent() {
+        this.setState({
+            navStyle: 'navbar-tansparent'
+        })
+    }
+
+    makeSolid() {
+        this.setState({
+            navStyle: 'navbar-solid'
+        })
+    }
+
     render() {
         return (
             <div className="container-fluid cmpnt-navbar">
-                <nav className="navbar navbar-toggleable-sm sticky-top">
+                <Waypoint
+                    onEnter={this.makeTransparent}
+                    onLeave={this.makeSolid}
+                />
+                <div className={this.state.navStyle}>
+                <nav className="navbar navbar-toggleable-sm fixed-top">
                     <button className="navbar-toggler" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="navbar">
                         <i className="fa fa-bars" aria-hidden="true"></i>
                     </button>
                     <div className="collapse navbar-collapse text-center" id="navbar">
-                        <span className="navbar-brand">Canaan Seaton</span>                        
+                        <span className="navbar-brand">Canaan Seaton</span>
                         <ul className="nav navbar-nav ml-auto">
                             {this.renderNavList()}
                         </ul>
                     </div>
                 </nav>
+                </div>
             </div>
         );
     }

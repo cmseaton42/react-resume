@@ -21,9 +21,9 @@ const App = () => {
         <Navbar />
         <Cover />
         <div className="d-flex flex-row flex-wrap justify-content-between w-100">
-          <DetailWIcon icon={'envelope'} caption={'cmseaton42@gmail.com'} />
-          <DetailWIcon icon={'phone'} caption={'1 (931) 446-6573'} />
-          <DetailWIcon icon={'map-marker'} caption={'5220 Stonehedge Dr, Evansville, IN 47715'} />
+          <DetailWIcon icon={'envelope'} caption={'cmseaton42@gmail.com'} animation={'slideInLeft'} />
+          <DetailWIcon icon={'phone'} caption={'1 (931) 446-6573'} animation={'slideInDown'} />
+          <DetailWIcon icon={'map-marker'} caption={'5220 Stonehedge Dr, Evansville, IN 47715'} animation={'slideInRight'} />
         </div>
         <hr />
       </div>
