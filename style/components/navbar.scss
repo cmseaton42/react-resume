@@ -31,6 +31,7 @@
 .navbar-solid {
     .navbar {
         background: white;
+        opacity: .7;
         transition: background-color 400ms linear;
         .nav-item {
             .nav-link {
@@ -88,7 +89,16 @@
     color: black;
 }
 
-@media (max-width: 790px) {
+#navbar {
+    margin-right: 100px;
+}
+
+@media (max-width: 760px) {
+    .navbar-nav {
+        text-align: left;
+        float: left;
+        position: relative;
+    }
     .navbar-brand {
         display: none;
     }
@@ -98,6 +108,7 @@
     .navbar-tansparent {
         .navbar {
             background: white;
+            opacity: .75;
             transition: background-color 400ms linear;
             .nav-item {
                 .nav-link {

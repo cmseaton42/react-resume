@@ -1,20 +1,29 @@
 .cmpnt-detail-w-icon {
-    margin-top: 15px;
+    margin-top: 5px;
+    margin-bottom: 5px;
     margin-left: 10px;
-    font-size: 20px;
-    font-weight: bolder;
+    font-size: 18px;
+    text-align: center;
+    font-weight: bold;
     width: 100%;
-    animation-delay: 500ms;
+    animation-delay: 1000ms;
     animation-duration: 1500ms;
-
     i {
-        font-size: 25px;
+        font-size: 18px;
     }
 }
 
-@media (min-width: 790px) {
+@media (min-width: 780px) {
     .cmpnt-detail-w-icon {
         flex: 1;
+        margin-top: 15px;
+        margin-bottom: 2px;
+        margin-left: 0px;
         margin-left: 30px;
+        font-size: 23px;
+        font-weight: bolder;
+        i {
+            font-size: 35px;
+        }
     }
 }

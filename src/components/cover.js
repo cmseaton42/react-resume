@@ -51,7 +51,7 @@ export default class Cover extends Component {
                 <Carousel />
                 <div className="c-greeting-outer">
                     <div className="c-greeting-inner">
-                        <h1 className="bold animated jello">Hello, I'm Canaan</h1>
+                        <h1 className="bold animated slideInDown">Hello, I'm Canaan</h1>
                         {this.renderDetails()}
                     </div>
                 </div>
