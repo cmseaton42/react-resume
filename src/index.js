@@ -1,10 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { createStore, applyMiddleware } from 'redux'
-import { Provider } from 'react-redux'
-import ReduxThunk from 'redux-thunk'
-import reducers from './reducers'
-//import Routes from './router';
 import '../style/vendor/animate/animate.min.scss'
 import '../style/style.scss'
 
@@ -14,22 +9,18 @@ import DetailWIcon from './components/detail-w-icon'
 import SkillDetail from './components/skills'
 
 const App = () => {
-  const store = createStore(() => { return {} }, ['use redux']);
-
   return (
-    <Provider store={store}>
-      <div>
-        <Navbar />
-        <Cover />
-        <div className="d-flex flex-row flex-wrap justify-content-between w-100">
-          <DetailWIcon icon={'envelope'} caption={'cmseaton42@gmail.com'} animation={'slideInLeft'} />
-          <DetailWIcon icon={'phone'} caption={'1 (931) 446-6573'} animation={'slideInUp'} />
-          <DetailWIcon icon={'map-marker'} caption={'5220 Stonehedge Dr, Evansville, IN 47715'} animation={'slideInRight'} />
-        </div>
-        <hr />
-        <SkillDetail />
+    <div>
+      <Navbar />
+      <Cover />
+      <div className="d-flex flex-row flex-wrap justify-content-between w-100">
+        <DetailWIcon icon={'envelope'} caption={'cmseaton42@gmail.com'} animation={'slideInLeft'} />
+        <DetailWIcon icon={'phone'} caption={'1 (931) 446-6573'} animation={'slideInUp'} />
+        <DetailWIcon icon={'map-marker'} caption={'5220 Stonehedge Dr, Evansville, IN 47715'} animation={'slideInRight'} />
       </div>
-    </Provider>
+      <hr />
+      <SkillDetail />
+    </div>
   );
 };
 
