@@ -1,0 +1,46 @@
+$primary: black;
+$secondary: #cd4400;
+.timeline-detail {
+    padding: 0px;
+    margin: 0px 10px 0px 30px;
+    position: relative;
+
+    border-left: $primary 2px dashed;
+    animation-delay: 200ms;
+    animation-duration: 1100ms;
+
+    .timeline-header {
+        padding: 0px 15px 0px 30px;
+        margin: 0px;
+
+        .timeline-title {
+            font-size: 25px;
+            font-weight: bold;
+
+            padding-bottom: 0px;
+            margin-bottom: 0px;
+        }
+
+        .timeline-time {
+            color: $secondary;
+            margin-bottom: 0px;
+            padding-left: 10px;
+        }
+    }
+
+    .timeline-description {
+        padding: 10px 15px 10px 35px;
+        margin: 0px;
+    }
+
+    .timeline-decorator {
+        position: absolute;
+        top: 0;
+        left: -13px;
+        background: white;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        border: $secondary 2px solid;
+    }
+}

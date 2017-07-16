@@ -7,6 +7,7 @@ import Navbar from './components/navbar'
 import Cover from './components/cover'
 import DetailWIcon from './components/detail-w-icon'
 import SkillDetail from './components/skills'
+import Experience from './components/experience'
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
       </div>
       <hr />
       <SkillDetail />
+      <Experience />
     </div>
   );
 };

@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Carousel from './carousel'
 
 import '../../style/components/cover.scss'
 
@@ -10,7 +9,8 @@ export default class Cover extends Component {
         this.state = {
             details: [
                 { detail: 'FRONT END DEVELOPER', style: 'animated fadeIn'},
-                { detail: 'FREE-LANCE ENGINEER', style: 'dnone'},
+                { detail: 'CONTROL SYSTEMS ENGINEER', style: 'dnone'},
+                { detail: 'FREE-LANCE DEVELOPER', style: 'dnone'},
                 { detail: 'SOFTWARE ENTHUSIAST', style: 'dnone'},
                 { detail: 'SUPER NERD', style: 'dnone'}
             ],
@@ -48,11 +48,12 @@ export default class Cover extends Component {
     render() {
         return (
             <div id="Home" className="cmpnt-cover p-relative">
-                <Carousel />
-                <div className="c-greeting-outer">
-                    <div className="c-greeting-inner">
-                        <h1 className="bold animated slideInDown">Hello, I'm Canaan</h1>
-                        {this.renderDetails()}
+                <div className="cover">
+                    <div className="c-greeting-outer">
+                        <div className="c-greeting-inner">
+                            <h1 className="bold animated slideInDown">Hello, I'm Canaan</h1>
+                            {this.renderDetails()}
+                        </div>
                     </div>
                 </div>
             </div>

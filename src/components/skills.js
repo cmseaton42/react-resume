@@ -35,7 +35,7 @@ export default class SkillDetail extends Component {
             stroke: {
                 color: {
                     background: '#d3d3d3',
-                    progress: '#545454'
+                    progress: '#cd4400'
                 },
                 width: 7,
             },

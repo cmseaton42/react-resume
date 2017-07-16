@@ -25,7 +25,7 @@ export default class RadialProgressBar extends Component {
                     const progress = this.state.progress + 1;
                     this.setState({ progress });
                 }
-            }, 27);
+            }, 22);
         }
     }
 

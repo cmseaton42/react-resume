@@ -11,8 +11,9 @@ export default class Navbar extends Component {
         this.state = {
             navList: [
                 'Home',
-                'Skills',
                 'Profile',
+                'Skills',
+                'Experience',
                 'Contact',
             ],
             active: 'Home',
