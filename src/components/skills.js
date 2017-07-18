@@ -17,10 +17,13 @@ export default class SkillDetail extends Component {
                 { title: 'JQuery', level: 85 },
                 { title: 'Git', level: 75 },
                 { title: 'Gulp / Webpack', level: 60}
-            ]
+            ],
+            loaded: false,
+            class: '' 
         }
 
         this.renderSkills = this.renderSkills.bind(this);
+        this.onEnterHandler = this.onEnterHandler.bind(this);
     }
 
     renderSkills() {
@@ -59,12 +62,21 @@ export default class SkillDetail extends Component {
         return skills;
     }
 
+    onEnterHandler() {
+        if (!this.state.loaded) {
+            this.setState({
+                loaded: true,
+                class: 'animated slideInDown'
+            });
+        }
+    }
+
     render() {
         
 
         return (
             <div id="Skills" className="cmpnt-skill-detail text-center">
-                <div style={{fontSize: '50px'}}>Skills</div>
+                <div style={{fontSize: '50px'}} className={this.state.class}><Waypoint onEnter={this.onEnterHandler} />Skills</div>
                 <div className='d-flex flex-row flex-wrap justify-content-around'>
                     {this.renderSkills()}
                 </div>
