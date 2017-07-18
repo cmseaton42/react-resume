@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import RadialProgressBar from './radial-progress-bar'
 import Waypoint from 'react-waypoint'
 
+import '../../style/components/skills.scss'
+
 
 export default class SkillDetail extends Component {
     constructor() {

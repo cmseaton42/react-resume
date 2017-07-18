@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '../../style/components/navbar.scss';
 
 import Waypoint from 'react-waypoint'
+import Scrollspy from 'react-scrollspy'
 
 export default class Navbar extends Component {
 
@@ -11,32 +12,19 @@ export default class Navbar extends Component {
         this.state = {
             navList: [
                 'Home',
-                'Profile',
+                //'Profile',
                 'Skills',
                 'Experience',
-                'Contact',
+                //'Contact',
             ],
             active: 'Home',
             navStyle: 'navbar-tansparent'
         }
 
-        this.renderNavList = this.renderNavList.bind(this);
         this.makeTransparent = this.makeTransparent.bind(this);
         this.makeSolid = this.makeSolid.bind(this);
     }
 
-    renderNavList() {
-        return this.state.navList.map((item) => {
-            const href = "#" + item;
-            const styles = this.state.active === item ? 'nav-item active' : 'nav-item';
-
-            return (
-                <li key={item} className={styles} onClick={() => { this.setState({ active: item }) }}>
-                    <a href={href} className="nav-link">{item}</a>
-                </li>
-            )
-        })
-    }
 
     makeTransparent() {
         this.setState({
@@ -64,9 +52,11 @@ export default class Navbar extends Component {
                     </button>
                     <div className="collapse navbar-collapse text-center" id="navbar">
                         <span className="navbar-brand">Canaan Seaton</span>
-                        <ul className="nav navbar-nav ml-auto">
-                            {this.renderNavList()}
-                        </ul>
+                        <Scrollspy className="nav navbar-nav ml-auto" items={this.state.navList} currentClassName='nav-item active'>
+                            <li className="nav-item"><a className="nav-link" href="#Home">Home</a></li>
+                            <li className="nav-item"><a className="nav-link" href="#Skills">Skills</a></li>
+                            <li className="nav-item"><a className="nav-link" href="#Experience">Experience</a></li>
+                        </Scrollspy>
                     </div>
                 </nav>
                 </div>
