@@ -10,10 +10,10 @@ export default class Experience extends Component {
         this.state = {
             workHistory: [
                 {
-                    title: 'Electrical Engineering Co-Op (Bridgestone Tire Company)',
-                    timespan: 'May 2013 - December 2013',
+                    title: 'Control Systems Engineer (Preh IMA Automation)',
+                    timespan: 'May, 2016 - Present',
                     description: `During My Coop, I successfully led two separate efforts to convert older GE Hardware to
-                     ControlLogix Systems. This included updating the drawings and rewriting the software for both systems.`
+                     ControlLogix Systems. This included updating the drawings and rewriting the software for both systems`,
                 },
                 {
                     title: 'Control Systems Engineer (Evana Automation)',
@@ -21,11 +21,11 @@ export default class Experience extends Component {
                     description: `During My Coop, I successfully led two separate efforts to convert older GE Hardware to
                      ControlLogix Systems. This included updating the drawings and rewriting the software for both systems`,
                 },
-                {
-                    title: 'Control Systems Engineer (Preh IMA Automation)',
-                    timespan: 'May, 2016 - Present',
+                    {
+                    title: 'Electrical Engineering Co-Op (Bridgestone Tire Company)',
+                    timespan: 'May 2013 - December 2013',
                     description: `During My Coop, I successfully led two separate efforts to convert older GE Hardware to
-                     ControlLogix Systems. This included updating the drawings and rewriting the software for both systems`,
+                     ControlLogix Systems. This included updating the drawings and rewriting the software for both systems.`
                 }
             ],
             education: [
@@ -60,7 +60,6 @@ export default class Experience extends Component {
     }
 
     loadExpHandler() {
-        console.log('experience');
         if (!this.state.exp_loaded) {
             this.setState({
                 exp_loaded: true,

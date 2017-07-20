@@ -1,8 +1,30 @@
 .cmpnt-skill-detail {
-    color: black;
-    //height: 1600px;
+    color: black; //height: 1600px;
+}
 
+.banner {
+    font-size: 50px;
+}
+
+.skill-menu-1 {
+    display: block;
+    .nav-list {
+        display: inline-block;
+    }
+}
+
+.skill-menu-2 {
+    display: none;
+}
+
+@media (max-width: 780px) {
     .banner {
-        font-size: 100px;
+        font-size: 30px;
+    }
+    .skill-menu-1 {
+        display: none;
+    }
+    .skill-menu-2 {
+        display: block;
     }
 }

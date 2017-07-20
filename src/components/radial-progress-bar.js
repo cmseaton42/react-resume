@@ -8,16 +8,21 @@ export default class RadialProgressBar extends Component {
         this.state = {
             loaded: true,
             progress: 0,
+            loadTimer: null
         }
 
         this.onEnterHandler = this.onEnterHandler.bind(this);
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.state.loadTimer);
     }
 
     onEnterHandler() {
         if (!this.loaded) {
             let loadTimer = setInterval(() => {
                 if (this.state.progress === this.props.progress) {
-                    loadTimer = clearInterval();
+                    clearInterval(this.state.loadTimer);
                     this.setState({
                         loaded: true
                     });
@@ -26,6 +31,7 @@ export default class RadialProgressBar extends Component {
                     this.setState({ progress });
                 }
             }, 22);
+            this.setState({ loadTimer });
         }
     }
 
