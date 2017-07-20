@@ -11,14 +11,17 @@ export default class SkillDetail extends Component {
 
         this.state = {
             skills: [
-                { title: 'HTML5', level: 75 },
-                { title: 'CSS3 / SASS', level: 80 },
-                { title: 'React', level: 70 },
-                { title: 'Redux', level: 45 },
-                { title: 'JS / ES6', level: 85 },
-                { title: 'JQuery', level: 85 },
-                { title: 'Git', level: 75 },
-                { title: 'Gulp / Webpack', level: 60}
+                { title: 'HTML5', level: 75, category: 'Web Developement' },
+                { title: 'CSS3 / SASS', level: 80, category: 'Web Developement' },
+                { title: 'React', level: 70, category: 'Web Developement' },
+                { title: 'Redux', level: 45, category: 'Web Developement' },
+                { title: 'JS / ES6', level: 85, category: 'Web Developement' },
+                { title: 'JQuery', level: 85, category: 'Web Developement' },
+                { title: 'Git', level: 75, category: 'Web Developement' },
+                { title: 'Gulp / Webpack', level: 60, category: 'Web Developement'},
+                { title: 'Studio5000', level: 95, category: 'Control Systems Engineering'},
+                { title: 'FactoryTalk', level: 95, category: 'Control Systems Engineering'},
+                { title: 'GX Works 2', level: 75, category: 'Control Systems Engineering'}
             ],
             filters: ['All', 'Web Developement', 'Control Systems Engineering'],
             filter: 'All',
@@ -54,9 +57,15 @@ export default class SkillDetail extends Component {
             }
         }
 
-        let skills = this.state.skills.map((skill, index) => {
+        let filtered = this.state.skills.map(skill => {
+            let newSkill = skill;
+            newSkill.style = skill.category === this.state.filter || this.state.filter == 'All' ? '' : 'animated fadeOut dnone';
+            return newSkill;
+        });
+
+        let skills = filtered.map((skill, index) => {
             return (
-                <div key={index} className="text-center">
+                <div key={index} className={`text-center ${skill.style}`}>
                     <RadialProgressBar 
                         options={options}
                         text={skill.title}
@@ -92,8 +101,8 @@ export default class SkillDetail extends Component {
             <div id="Skills" className="cmpnt-skill-detail text-center">
                 <div className={this.state.class}><Waypoint onEnter={this.onEnterHandler} />
                     <div>
-                        <span className='banner'>My Skillset</span>
-                        <ul className="skill-menu-1 nav justify-content-center ">
+                        <span className='header'>My Skillset</span>
+                        <ul className="skill-menu-1 nav skills-menu justify-content-center ">
                             {this.state.filters.map((filter) => {
                                 const style = this.state.filter === filter ? 'nav-link active' : 'nav-link';
                                 return <li key={filter} onClick={this.clickHandler} className="nav-list"><a data-key={filter} className={style} href="">{filter}</a></li>;
@@ -107,7 +116,7 @@ export default class SkillDetail extends Component {
                         </ul>
                     </div>
                 </div>
-                <div className='d-flex flex-row flex-wrap justify-content-around'>
+                <div className='d-flex flex-row flex-wrap justify-content-center'>
                     {this.renderSkills()}
                 </div>
                 <hr />

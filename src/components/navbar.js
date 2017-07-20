@@ -46,7 +46,7 @@ export default class Navbar extends Component {
                     onLeave={this.makeSolid}
                 />
                 <div className={this.state.navStyle}>
-                <nav className="navbar navbar-toggleable-sm fixed-top">
+                <nav className="navbar navbar-toggleable-lg fixed-top">
                     <button className="navbar-toggler" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="navbar">
                         <i className="fa fa-bars" aria-hidden="true"></i>
                     </button>

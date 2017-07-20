@@ -44,3 +44,18 @@ $secondary: #cd4400;
         border: $secondary 2px solid;
     }
 }
+
+
+@media (max-width: 790px) {
+    .timeline-detail {
+        .timeline-header {
+            padding: 0px 15px 0px 30px;
+            margin: 0px;
+
+            .timeline-title {
+                font-size: 19px;
+                font-weight: bold;
+            }
+        }
+    }
+}

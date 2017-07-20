@@ -17,6 +17,33 @@
     display: none;
 }
 
+.nav {
+    margin-bottom: 5px;
+    background: transparent;
+    transition: background-color 300ms linear;
+    .nav-list {
+        .nav-link {
+            color: #383838;
+            &:hover {
+                font-weight: bold;
+            }
+        }
+        .active {
+            color: black;
+        }
+        margin: 0px 5px;
+        padding-top: 5px;
+    }
+    .active {
+        border-bottom: black 3px solid;
+        font-weight: bold;
+        .nav-link {
+            color: black;
+            font-weight: bold;
+        }
+    }
+}
+
 @media (max-width: 780px) {
     .banner {
         font-size: 30px;
@@ -26,5 +53,33 @@
     }
     .skill-menu-2 {
         display: block;
+    }
+    .nav {
+        .nav-list {
+            border: none;
+            &:hover {
+                border: none;
+                font-weight: bold;
+            }
+            .nav-link {
+                border: none;
+                &:hover {
+                    border: none;
+                }
+            }
+        }
+        .active {
+            font-weight: bold;
+            position: relative;
+            &:after {
+                content: '';
+                position: absolute;
+                left: calc(50% - 40px);
+                bottom: 3px;
+                height: 3px;
+                width: 80px;
+                background: #cd4400;
+            }
+        }
     }
 }

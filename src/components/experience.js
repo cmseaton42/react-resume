@@ -84,11 +84,11 @@ export default class Experience extends Component {
                 <div className="Container">
                     <div className="row">
                         <div className="col-sm-12 col-md-6">
-                            <div style={{fontSize: '50px'}} className={this.state.exp_style}><Waypoint onEnter={this.loadExpHandler} />Experience</div>
+                            <div className={`header ${this.state.exp_style}`}><Waypoint onEnter={this.loadExpHandler} />Experience</div>
                             {this.renderWorkHistory()}
                         </div>
                         <div className="col-sm-12 col-md-6">
-                            <div style={{fontSize: '50px'}} className={this.state.edu_style}><Waypoint onEnter={this.loadEduhandler} />Education</div>
+                            <div className={`header ${this.state.exp_style}`}><Waypoint onEnter={this.loadEduhandler} />Education</div>
                             {this.renderEducation()}
                         </div>
                     </div>
