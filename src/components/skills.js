@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import RadialProgressBar from './radial-progress-bar'
 import Waypoint from 'react-waypoint'
+import FlipMove from 'react-flip-move'
 
 import '../../style/components/skills.scss'
 
@@ -57,20 +58,23 @@ export default class SkillDetail extends Component {
             }
         }
 
-        let filtered = this.state.skills.map(skill => {
-            let newSkill = skill;
-            newSkill.style = skill.category === this.state.filter || this.state.filter == 'All' ? '' : 'animated fadeOut dnone';
-            return newSkill;
+        // let filtered = this.state.skills.map(skill => {
+        //     let newSkill = skill;
+        //     newSkill.style = skill.category === this.state.filter || this.state.filter == 'All' ? '' : 'animated fadeOut dnone';
+        //     return newSkill;
+        // });
+
+        let filtered = this.state.skills.filter(skill => {
+            return skill.category === this.state.filter || this.state.filter === 'All';
         });
 
         let skills = filtered.map((skill, index) => {
             return (
-                <div key={index} className={`text-center ${skill.style}`}>
                     <RadialProgressBar 
+                        key={skill.title}
                         options={options}
                         text={skill.title}
                         progress={skill.level} />
-                </div>
             );
         })
         return skills;
@@ -116,8 +120,13 @@ export default class SkillDetail extends Component {
                         </ul>
                     </div>
                 </div>
-                <div className='d-flex flex-row flex-wrap justify-content-center'>
-                    {this.renderSkills()}
+                <div >
+                    <FlipMove className='d-flex flex-wrap justify-content-center' 
+                        maintainContainerHeight={true} 
+                        leaveAnimation={'none'} 
+                        duration={500}>
+                            {this.renderSkills()}
+                    </FlipMove>
                 </div>
                 <hr />
             </div>
