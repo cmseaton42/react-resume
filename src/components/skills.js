@@ -42,7 +42,6 @@ export default class SkillDetail extends Component {
             filters: ['Front End', 'Back End', 'Control Systems'],
             filter: 'Front End',
             loaded: false,
-            animating: false,
             class: '' 
         }
 
@@ -85,7 +84,7 @@ export default class SkillDetail extends Component {
                         options={options}
                         text={skill.title}
                         progress={skill.level}
-                        animating= {animating} />
+                        />
             );
         })
         return skills;
