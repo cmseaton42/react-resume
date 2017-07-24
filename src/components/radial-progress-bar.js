@@ -8,33 +8,32 @@ export default class RadialProgressBar extends Component {
         this.state = {
             loaded: true,
             progress: 0,
-            loadTimer: null
         }
 
         this.onEnterHandler = this.onEnterHandler.bind(this);
     }
 
     componentWillUnmount() {
-        clearInterval(this.state.loadTimer);
-        this.setState({ loadTimer: null });
+        clearInterval(this.loadTimer);
     }
 
     onEnterHandler() {
-        if (!this.loaded) {
-            let loadTimer = setInterval(() => {
+        if (!this.loaded && !this.props.animating) {
+            this.loadTimer = setInterval(() => {
                 if (this.state.progress === this.props.progress) {
-                    clearInterval(this.state.loadTimer);
+                    clearInterval(this.loadTimer);
                     this.setState({
                         loaded: true,
                         loadTimer: null
                     });
                 } else {
+                    if (this.props.animating) clearInterval(this.loadTimer);
                     const progress = this.state.progress + 1;
                     this.setState({ progress });
                 }
-            }, 22);
-
-            this.setState({ loadTimer });
+            }, 15);
+        } else {
+            clearInterval(this.loadTimer);
         }
     }
 
@@ -44,7 +43,7 @@ export default class RadialProgressBar extends Component {
         const base = {
             transformOrigin: '50% 50%',
             transform: 'rotateZ(-90deg)',
-            fill: 'transparent',
+            fill: 'transparent', 
             strokeWidth: `${options.stroke.width}px`,
             stroke: `${options.stroke.color.background}`,
             strokeLinecap: 'round',

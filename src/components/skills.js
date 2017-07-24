@@ -12,21 +12,37 @@ export default class SkillDetail extends Component {
 
         this.state = {
             skills: [
-                { title: 'HTML5', level: 75, category: 'Web Developement' },
-                { title: 'CSS3 / SASS', level: 80, category: 'Web Developement' },
-                { title: 'React', level: 70, category: 'Web Developement' },
-                { title: 'Redux', level: 45, category: 'Web Developement' },
-                { title: 'JS / ES6', level: 85, category: 'Web Developement' },
-                { title: 'JQuery', level: 85, category: 'Web Developement' },
-                { title: 'Git', level: 75, category: 'Web Developement' },
-                { title: 'Gulp / Webpack', level: 60, category: 'Web Developement'},
-                { title: 'Studio5000', level: 95, category: 'Control Systems Engineering'},
-                { title: 'FactoryTalk', level: 95, category: 'Control Systems Engineering'},
-                { title: 'GX Works 2', level: 75, category: 'Control Systems Engineering'}
+                { title: 'HTML5', level: 75, category: { 'Front End': true } },
+                { title: 'CSS3 / SASS', level: 80, category: { 'Front End': true } },
+                { title: 'React', level: 80, category: { 'Front End': true } },
+                { title: 'Handlebars', level: 65, category: { 'Front End': true } },
+                { title: 'Redux', level: 50, category: { 'Front End': true } },
+                { title: 'JS / ES6', level: 85, category: { 'Front End': true, 'Back End': true } },
+                { title: 'JQuery', level: 85, category: { 'Front End': true } },
+                { title: 'Bootstrap', level: 75, category: { 'Front End': true } },
+                { title: 'Git', level: 75, category: { 'Front End': true, 'Back End': true } },
+                { title: 'Mocha/Chai', level: 60, category: { 'Front End': true, 'Back End': true } },
+                { title: 'MongoDB', level: 75, category: { 'Back End': true }},
+                { title: 'SQL', level: 55, category: { 'Back End': true }},
+                { title: 'NodeJS', level: 75, category: { 'Back End': true }},
+                { title: 'Express', level: 85, category: { 'Back End': true }},
+                { title: 'Gulp / Webpack', level: 60, category: { 'Front End': true } },
+                { title: 'Studio5000', level: 95, category: { 'Control Systems': true } },
+                { title: 'FactoryTalk', level: 95, category: { 'Control Systems': true } },
+                { title: 'GX Works 2', level: 80, category: { 'Control Systems': true } },
+                { title: 'Proface', level: 85, category: { 'Control Systems': true } },
+                { title: 'Cognex', level: 95, category: { 'Control Systems': true }},
+                { title: 'Keyence', level: 80, category: { 'Control Systems': true }},
+                { title: 'Siemens S7', level: 60, category: { 'Control Systems': true }},
+                { title: 'TIA Portal', level: 70, category: { 'Control Systems': true }},
+                { title: 'Kinetix Servo', level: 70, category: { 'Control Systems': true }},
+                { title: 'PowerFlex Drives', level: 80, category: { 'Control Systems': true }},
+                { title: 'Autocad', level: 50, category: { 'Control Systems': true }},
             ],
-            filters: ['All', 'Web Developement', 'Control Systems Engineering'],
-            filter: 'All',
+            filters: ['Front End', 'Back End', 'Control Systems'],
+            filter: 'Front End',
             loaded: false,
+            animating: false,
             class: '' 
         }
 
@@ -35,7 +51,7 @@ export default class SkillDetail extends Component {
         this.clickHandler = this.clickHandler.bind(this);
     }
 
-    renderSkills() {
+    renderSkills(animating) {
         const options = {
             height: 200,
             width: 200,
@@ -59,7 +75,7 @@ export default class SkillDetail extends Component {
         }
 
         let filtered = this.state.skills.filter(skill => {
-            return skill.category === this.state.filter || this.state.filter === 'All';
+            return skill.category[this.state.filter] === true;
         });
 
         let skills = filtered.map((skill, index) => {
@@ -68,7 +84,8 @@ export default class SkillDetail extends Component {
                         key={skill.title}
                         options={options}
                         text={skill.title}
-                        progress={skill.level} />
+                        progress={skill.level}
+                        animating= {animating} />
             );
         })
         return skills;
@@ -95,11 +112,11 @@ export default class SkillDetail extends Component {
     render() {
         const customLeaveAnimation = {
             from: { opacity: 1 },
-            to:   { transform:  'scale(.7) rotateZ(-25deg)', opacity: 0 }
+            to:   { transform:  'scale(.8) rotateZ(-25deg)', opacity: 0 }
         };
 
         const customEnterAnimation = {
-            from: { transform:  'scale(.7) rotateZ(-25deg)', opacity: 0 },
+            from: { transform:  'scale(.8) rotateZ(25deg)', opacity: 0 },
             to:   { opacity: 1 }
         };
         
@@ -128,7 +145,13 @@ export default class SkillDetail extends Component {
                         maintainContainerHeight={true} 
                         leaveAnimation={customLeaveAnimation}
                         enterAnimation={customEnterAnimation}
-                        duration={500}>
+                        duration={500}
+                        onStartAll={ () => { // kill all clone and original intervals
+                            let killIntervals = setTimeout(() => {
+                                for ( let i = killIntervals; i > 0; i--) clearInterval(i);
+                            }, 20);
+                        }}
+                        >
                             {this.renderSkills()}
                     </FlipMove>
                 </div>
