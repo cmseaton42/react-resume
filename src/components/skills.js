@@ -95,7 +95,12 @@ export default class SkillDetail extends Component {
     render() {
         const customLeaveAnimation = {
             from: { opacity: 1 },
-            to:   { transform:  'scale(.7) rotateZ(-60deg)', opacity: 0 }
+            to:   { transform:  'scale(.7) rotateZ(-25deg)', opacity: 0 }
+        };
+
+        const customEnterAnimation = {
+            from: { transform:  'scale(.7) rotateZ(-25deg)', opacity: 0 },
+            to:   { opacity: 1 }
         };
         
 
@@ -121,7 +126,8 @@ export default class SkillDetail extends Component {
                 <div >
                     <FlipMove className='d-flex flex-wrap justify-content-center' 
                         maintainContainerHeight={true} 
-                        leaveAnimation={customLeaveAnimation} 
+                        leaveAnimation={customLeaveAnimation}
+                        enterAnimation={customEnterAnimation}
                         duration={500}>
                             {this.renderSkills()}
                     </FlipMove>
