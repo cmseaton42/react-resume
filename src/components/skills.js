@@ -58,12 +58,6 @@ export default class SkillDetail extends Component {
             }
         }
 
-        // let filtered = this.state.skills.map(skill => {
-        //     let newSkill = skill;
-        //     newSkill.style = skill.category === this.state.filter || this.state.filter == 'All' ? '' : 'animated fadeOut dnone';
-        //     return newSkill;
-        // });
-
         let filtered = this.state.skills.filter(skill => {
             return skill.category === this.state.filter || this.state.filter === 'All';
         });
