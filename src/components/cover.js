@@ -37,6 +37,10 @@ export default class Cover extends Component {
         }, 4000)
     }
 
+    componentWillUnmount() {
+        clearInterval(this.delay);
+    }
+
     renderDetails() {
         return this.state.details.map((item, index) => {
             return (

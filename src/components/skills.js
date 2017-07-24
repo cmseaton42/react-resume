@@ -42,6 +42,7 @@ export default class SkillDetail extends Component {
             filters: ['Front End', 'Back End', 'Control Systems'],
             filter: 'Front End',
             loaded: false,
+            debounce: false,
             class: '' 
         }
 
@@ -50,7 +51,7 @@ export default class SkillDetail extends Component {
         this.clickHandler = this.clickHandler.bind(this);
     }
 
-    renderSkills(animating) {
+    renderSkills() {
         const options = {
             height: 200,
             width: 200,
@@ -101,11 +102,14 @@ export default class SkillDetail extends Component {
 
     clickHandler(event) {
         event.preventDefault();
+        if (!this.state.debounce) {
+            this.setState({
+                filter: event.target.dataset.key,
+                debounce: true
+            })
 
-        this.setState({
-            filter: event.target.dataset.key
-        })
-
+            this.delay = setTimeout(() => { this.setState({ debounce: false }) }, 1000);
+        }
     }
 
     render() {
@@ -124,10 +128,11 @@ export default class SkillDetail extends Component {
             <div id="Skills" className="cmpnt-skill-detail text-center">
                 <div className={this.state.class}><Waypoint onEnter={this.onEnterHandler} />
                     <div>
-                        <span className='header'>My Skillset</span>
+                        <span className='header'>My SkillSet</span>
                         <ul className="skill-menu-1 nav skills-menu justify-content-center ">
                             {this.state.filters.map((filter) => {
-                                const style = this.state.filter === filter ? 'nav-link active' : 'nav-link';
+                                let style = this.state.filter === filter ? 'nav-link active' : 'nav-link';
+                                style = this.state.debounce === true ? `${style} disabled` : style;
                                 return <li key={filter} onClick={this.clickHandler} className="nav-list"><a data-key={filter} className={style} href="">{filter}</a></li>;
                             })}
                         </ul>
@@ -145,12 +150,7 @@ export default class SkillDetail extends Component {
                         leaveAnimation={customLeaveAnimation}
                         enterAnimation={customEnterAnimation}
                         duration={500}
-                        onStartAll={ () => { // kill all clone and original intervals
-                            let killIntervals = setTimeout(() => {
-                                for ( let i = killIntervals; i > 0; i--) clearInterval(i);
-                            }, 20);
-                        }}
-                        >
+                    >
                             {this.renderSkills()}
                     </FlipMove>
                 </div>

@@ -6,7 +6,7 @@ export default class RadialProgressBar extends Component {
         super();
 
         this.state = {
-            loaded: true,
+            loaded: false,
             progress: 0,
         }
 
@@ -35,7 +35,7 @@ export default class RadialProgressBar extends Component {
             clearInterval(this.loadTimer);
         }
     }
-
+    
     render() {
         const { options } = this.props;
 
@@ -59,12 +59,13 @@ export default class RadialProgressBar extends Component {
             strokeLinecap: 'round',
             r: options.radius,
             strokeDasharray: getStrokeArray(options.radius),
-            strokeDashoffset: calcProgress(options.radius, this.state.progress)
+            strokeDashoffset: calcProgress(options.radius, this.state.progress),
+            transition: 'stroke-dash-offset 500ms ease-in'
         }
 
         return (
             <div className="cmpnt-r-progress-bar">
-                <Waypoint onEnter={this.onEnterHandler} bottomOffset='-100px' />
+                 <Waypoint onEnter={this.onEnterHandler} bottomOffset='-100px' /> 
                 <svg height={options.height} width={options.width} style={{ background: 'transparent' }}>
                     <circle cx={options.center.X} cy={options.center.Y}
                         r={options.radius} style={base} />
