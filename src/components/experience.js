@@ -88,7 +88,7 @@ export default class Experience extends Component {
                             {this.renderWorkHistory()}
                         </div>
                         <div className="col-sm-12 col-md-6">
-                            <div className={`header ${this.state.exp_style}`}><Waypoint onEnter={this.loadEduhandler} />Education</div>
+                            <div className={`header ${this.state.edu_style}`}><Waypoint onEnter={this.loadEduhandler} />Education</div>
                             {this.renderEducation()}
                         </div>
                     </div>

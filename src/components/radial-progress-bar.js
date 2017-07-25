@@ -40,7 +40,13 @@ export default class RadialProgressBar extends Component {
         const { options } = this.props;
 
         const base = {
+            msTransformOrigin: '50% 50%',
+            MozTransformOrigin: '50% 50%',
+            WebkitTransformOrigin: '50% 50%',
             transformOrigin: '50% 50%',
+            msTransform: 'rotateZ(-90deg)',
+            MozTransform: 'rotateZ(-90deg)',
+            WebkitTransform: 'rotateZ(-90deg)',
             transform: 'rotateZ(-90deg)',
             fill: 'transparent', 
             strokeWidth: `${options.stroke.width}px`,
@@ -51,7 +57,13 @@ export default class RadialProgressBar extends Component {
         }
 
         const progress = {
+            msTransformOrigin: '50% 50%',
+            MozTransformOrigin: '50% 50%',
+            WebkitTransformOrigin: '50% 50%',
             transformOrigin: '50% 50%',
+            msTransform: 'rotateZ(-90deg)',
+            MozTransform: 'rotateZ(-90deg)',
+            WebkitTransform: 'rotateZ(-90deg)',
             transform: 'rotateZ(-90deg)',
             fill: 'transparent',
             strokeWidth: `${options.stroke.width}px`,

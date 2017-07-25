@@ -80,12 +80,12 @@ export default class SkillDetail extends Component {
 
         let skills = filtered.map((skill, index) => {
             return (
-                    <RadialProgressBar 
-                        key={skill.title}
-                        options={options}
-                        text={skill.title}
-                        progress={skill.level}
-                        />
+                <RadialProgressBar 
+                    key={skill.title}
+                    options={options}
+                    text={skill.title}
+                    progress={skill.level}
+                    />
             );
         })
         return skills;
@@ -95,7 +95,7 @@ export default class SkillDetail extends Component {
         if (!this.state.loaded) {
             this.setState({
                 loaded: true,
-                class: 'animated slideInDown'
+                class: 'animated zoomIn'
             });
         }
     }
@@ -128,7 +128,7 @@ export default class SkillDetail extends Component {
             <div id="Skills" className="cmpnt-skill-detail text-center">
                 <div className={this.state.class}><Waypoint onEnter={this.onEnterHandler} />
                     <div>
-                        <span className='header'>My SkillSet</span>
+                        <span className='header'>My Skillset</span>
                         <ul className="skill-menu-1 nav skills-menu justify-content-center ">
                             {this.state.filters.map((filter) => {
                                 let style = this.state.filter === filter ? 'nav-link active' : 'nav-link';
