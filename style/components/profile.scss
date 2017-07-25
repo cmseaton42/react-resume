@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Play');
+$Play: Play, sans-serif;
+
 .cmpnt-profile {
     padding: 20px 0px 30px 0px;
     margin: -12px 0px -12px 0px;
@@ -34,18 +37,21 @@
                 color: white;
                 &.profile-me {
                     position: absolute;
+                    font-family: Play;
                     opacity: 0;
                     animation: tag-me 800ms ease-in-out forwards;
                     animation-delay: 600ms;
                 }
                 &.profile-wife {
                     position: absolute;
+                    font-family: Play;
                     opacity: 0;
                     animation: tag-wife 800ms ease-in-out forwards;
                     animation-delay: 0ms;
                 }
                 &.profile-son {
                     position: absolute;
+                    font-family: Play;
                     opacity: 0;
                     animation: tag-son 800ms ease-in-out forwards;
                     animation-delay: 300ms;

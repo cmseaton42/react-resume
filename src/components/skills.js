@@ -21,7 +21,7 @@ export default class SkillDetail extends Component {
                 { title: 'JQuery', level: 85, category: { 'Front End': true } },
                 { title: 'Bootstrap', level: 75, category: { 'Front End': true } },
                 { title: 'Git', level: 75, category: { 'Front End': true, 'Back End': true } },
-                { title: 'Mocha/Chai', level: 60, category: { 'Front End': true, 'Back End': true } },
+                { title: 'Mocha / Chai', level: 60, category: { 'Front End': true, 'Back End': true } },
                 { title: 'MongoDB', level: 75, category: { 'Back End': true }},
                 { title: 'SQL', level: 55, category: { 'Back End': true }},
                 { title: 'NodeJS', level: 75, category: { 'Back End': true }},
