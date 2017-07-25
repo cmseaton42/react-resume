@@ -8,6 +8,7 @@ import Cover from './components/cover'
 import DetailWIcon from './components/detail-w-icon'
 import SkillDetail from './components/skills'
 import Experience from './components/experience'
+import Profile from './components/profile'
 
 const App = () => {
   return (
@@ -19,6 +20,8 @@ const App = () => {
         <DetailWIcon icon={'phone'} caption={'1 (931) 446-6573'} animation={'slideInUp'} />
         <DetailWIcon icon={'map-marker'} caption={'5220 Stonehedge Dr, Evansville, IN 47715'} animation={'slideInRight'} />
       </div>
+      <hr />
+      <Profile />
       <hr />
       <SkillDetail />
       <Experience />

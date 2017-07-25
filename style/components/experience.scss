@@ -1,0 +1,61 @@
+.experience-header {
+    display: inline-block;
+    
+    &:after {
+        font-family:  FontAwesome;
+        content: '\f126';
+
+        position: absolute;
+        top: 8px;
+        right: -22px;
+        color: #cd4400;
+        font-size: 35px;
+        font-weight: 500;
+    }
+}
+
+.education-header {
+    display: inline-block;
+    
+    &:after {
+        font-family:  FontAwesome;
+        content: '\f19d';
+
+        position: absolute;
+        top: 12px;
+        right: -30px;
+        color: #cd4400;
+        font-size: 27px;
+        font-weight: 500;
+    }
+}
+
+@media (max-width: 790px) {
+    .experience-header {
+        &:after {
+            font-family:  FontAwesome;
+            content: '\f126';
+
+            position: absolute;
+            top: 9px;
+            right: -12px;
+            color: #cd4400;
+            font-size: 22px;
+            font-weight: 500;
+        }
+    }
+
+    .education-header {
+        &:after {
+            font-family:  FontAwesome;
+            content: '\f19d';
+
+            position: absolute;
+            top: 10px;
+            right: -22px;
+            color: #cd4400;
+            font-size: 18px;
+            font-weight: 500;
+        }
+    }
+}

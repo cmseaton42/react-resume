@@ -44,6 +44,40 @@
     }
 }
 
+.skills-header {
+    display: inline-block;
+    
+    &:after {
+        font-family:  FontAwesome;
+        content: '\f0e7';
+
+        position: absolute;
+        top: 8px;
+        right: -17px;
+        color: #cd4400;
+        font-size: 30px;
+        font-weight: 600;
+
+        transform: rotateZ(20deg);
+    }
+}
+
+@media (max-width: 790px) {
+    .skills-header {
+        &:after {
+            font-family:  FontAwesome;
+            content: '\f0e7';
+
+            position: absolute;
+            top: 8px;
+            right: -10px;
+            color: #cd4400;
+            font-size: 18px;
+            font-weight: 600;
+        }
+    }
+}
+
 @media (max-width: 780px) {
     .banner {
         font-size: 30px;

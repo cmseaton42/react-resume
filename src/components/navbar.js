@@ -12,7 +12,7 @@ export default class Navbar extends Component {
         this.state = {
             navList: [
                 'Home',
-                //'Profile',
+                'Profile',
                 'Skills',
                 'Experience',
                 //'Contact',
@@ -54,6 +54,7 @@ export default class Navbar extends Component {
                         <span className="navbar-brand">Canaan Seaton</span>
                         <Scrollspy className="nav navbar-nav ml-auto" items={this.state.navList} currentClassName='nav-item active'>
                             <li className="nav-item"><a className="nav-link" href="#Home">Home</a></li>
+                            <li className="nav-item"><a className="nav-link" href="#Profile">Profile</a></li>
                             <li className="nav-item"><a className="nav-link" href="#Skills">Skills</a></li>
                             <li className="nav-item"><a className="nav-link" href="#Experience">Experience</a></li>
                         </Scrollspy>

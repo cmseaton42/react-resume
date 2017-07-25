@@ -128,7 +128,7 @@ export default class SkillDetail extends Component {
             <div id="Skills" className="cmpnt-skill-detail text-center">
                 <div className={this.state.class}><Waypoint onEnter={this.onEnterHandler} />
                     <div>
-                        <span className='header'>My Skillset</span>
+                        <span className='header skills-header'>My Skillset</span>
                         <ul className="skill-menu-1 nav skills-menu justify-content-center ">
                             {this.state.filters.map((filter) => {
                                 let style = this.state.filter === filter ? 'nav-link active' : 'nav-link';

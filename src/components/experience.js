@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import TimelineDetail from './timeline-detail'
 import Waypoint from 'react-waypoint'
 
+import '../../style/components/experience.scss'
 
 export default class Experience extends Component {
     constructor() {
@@ -12,14 +13,17 @@ export default class Experience extends Component {
                 {
                     title: 'Control Systems Engineer (Preh IMA Automation)',
                     timespan: 'May, 2016 - Present',
-                    description: `During My Coop, I successfully led two separate efforts to convert older GE Hardware to
-                     ControlLogix Systems. This included updating the drawings and rewriting the software for both systems`,
+                    description: `As a senior level Control Systems Engineer, I lead projects from the ground up. This spans from early customer
+                    interaction all the way to final install.  I have led prelimary controls design efforts, designed software from the ground up, 
+                    and and managed customer installs on a number of machines in this capacity. `,
                 },
                 {
                     title: 'Control Systems Engineer (Evana Automation)',
                     timespan: 'January, 2014 - May, 2016',
-                    description: `During My Coop, I successfully led two separate efforts to convert older GE Hardware to
-                     ControlLogix Systems. This included updating the drawings and rewriting the software for both systems`,
+                    description: `Beginning as an aide to large projects, I quickly gained merit in my colleagues eyes by developing
+                    various tools to shorten the amount of time spent on overhead in addition to developing prepackaged code to lessen
+                    the pain of device integration. From this, I was able to begin leading smaller projects early on in my tenure 
+                    including several small to medium projects in the US and one abroad.`,
                 },
                     {
                     title: 'Electrical Engineering Co-Op (Bridgestone Tire Company)',
@@ -84,11 +88,15 @@ export default class Experience extends Component {
                 <div className="Container">
                     <div className="row">
                         <div className="col-sm-12 col-md-6">
-                            <div className={`header ${this.state.exp_style}`}><Waypoint onEnter={this.loadExpHandler} />Experience</div>
+                            <div className="text-center">
+                                <div className={`header experience-header ${this.state.exp_style}`}><Waypoint onEnter={this.loadExpHandler} />Experience</div>
+                            </div>
                             {this.renderWorkHistory()}
                         </div>
                         <div className="col-sm-12 col-md-6">
-                            <div className={`header ${this.state.edu_style}`}><Waypoint onEnter={this.loadEduhandler} />Education</div>
+                            <div className="text-center">
+                                <div className={`header education-header ${this.state.edu_style}`}><Waypoint onEnter={this.loadEduhandler} />Education</div>
+                            </div>
                             {this.renderEducation()}
                         </div>
                     </div>
