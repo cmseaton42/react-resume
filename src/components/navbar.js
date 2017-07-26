@@ -52,7 +52,7 @@ export default class Navbar extends Component {
                     </button>
                     <div className="collapse navbar-collapse text-center" id="navbar">
                         <span className="navbar-brand">Canaan Seaton</span>
-                        <Scrollspy className="nav navbar-nav ml-auto" items={this.state.navList} currentClassName='nav-item active'>
+                        <Scrollspy className="nav navbar-nav ml-auto" offset={50} items={this.state.navList} currentClassName='nav-item active'>
                             <li className="nav-item"><a className="nav-link" href="#Home">Home</a></li>
                             <li className="nav-item"><a className="nav-link" href="#Profile">Profile</a></li>
                             <li className="nav-item"><a className="nav-link" href="#Skills">Skills</a></li>
