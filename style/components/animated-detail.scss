@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css?family=Play');
+
+$Play: 'Play', sans-serif;
+
+.cmpnt-animated-detail {
+    background: #ededed;
+    font-size: 40px;
+    padding: 35px 0px;
+    margin: -16px 0px;
+
+    .detail-container {
+        position: relative;
+        
+        .detail-count {
+            margin: 0px;
+            padding: 0px;
+            font-size: 45px;
+
+            i {
+                color: #d25619;
+            }
+
+            &-number {
+                font-weight: 600;
+                font-family: Play;
+
+                // position: absolute;
+                top: 4px;
+            }
+        }
+
+        .detail-caption {
+            margin: 5px;
+            padding: 0px;
+            font-family: Play;
+            font-weight: 600;
+
+            text-transform: capitalize;
+        }
+    }
+}
+
+@media (max-width: 790px) {
+    .cmpnt-animated-detail {
+        font-size: 30px;
+
+        .detail-container{
+
+            .detail-count {
+                font-size: 38px;
+                font-weight: bold;
+            }
+        }
+    }
+}

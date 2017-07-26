@@ -9,6 +9,7 @@ import DetailWIcon from './components/detail-w-icon'
 import SkillDetail from './components/skills'
 import Experience from './components/experience'
 import Profile from './components/profile'
+import Stats from './components/stats'
 
 const App = () => {
   return (
@@ -23,7 +24,10 @@ const App = () => {
       <hr />
       <Profile />
       <hr />
-      <SkillDetail />
+      <SkillDetail className="something" />
+      <hr />
+      <Stats />
+      <hr />
       <Experience />
     </div>
   );

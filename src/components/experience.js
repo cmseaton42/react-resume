@@ -41,8 +41,8 @@ export default class Experience extends Component {
             ],
             exp_loaded: false,
             edu_loaded: false,
-            exp_style: 'text-center',
-            edu_style: 'text-center'
+            exp_style: 'text-center dnone',
+            edu_style: 'text-center dnone'
         }
 
         this.renderWorkHistory = this.renderWorkHistory.bind(this);

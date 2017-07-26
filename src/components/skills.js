@@ -154,7 +154,6 @@ export default class SkillDetail extends Component {
                             {this.renderSkills()}
                     </FlipMove>
                 </div>
-                <hr />
             </div>
         )
     }

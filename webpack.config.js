@@ -1,6 +1,7 @@
-var webpack = require('webpack');
-var path = require('path');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 
 const VENDOR_LIBS = [
   'react', 'lodash', 'redux', 'react-redux', 'react-dom',
@@ -43,7 +44,8 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: 'src/index.html'
-    })
+    }),
+    new Dotenv()
   ]
 };
 

@@ -36,6 +36,7 @@
     "babel-preset-env": "^1.1.4",
     "babel-preset-react": "^6.16.0",
     "css-loader": "^0.26.1",
+    "dotenv-webpack": "^1.5.4",
     "html-webpack-plugin": "^2.24.1",
     "node-sass": "^4.5.3",
     "postcss": "^6.0.6",
