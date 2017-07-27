@@ -8,7 +8,13 @@ export default class Profile extends Component {
         super();
 
         this.state = {
-            about_me: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam feugiat cursus nisl, non feugiat diam dictum sit amet. Cras rhoncus velit consequat tincidunt sagittis. Vestibulum justo ante, euismod et tortor tristique, aliquet mollis lacus. Morbi nulla diam, mollis quis efficitur efficitur, rutrum vitae urna. Donec a porttitor purus. Nunc eu dolor eros. Fusce volutpat at ante sit amet maximus. Sed semper commodo enim, et tincidunt nisi ultrices eget. Phasellus quis convallis elit, et cursus turpis. Fusce quis massa tincidunt, molestie tortor quis, faucibus est. Mauris tincidunt eleifend nulla, quis ornare arcu pretium auctor. Maecenas maximus sit amet risus in dapibus. Mauris dapibus imperdiet lorem vel tincidunt. Integer eget egestas nisl. Sed sed maximus felis. Vestibulum justo turpis, feugiat ut malesuada a, imperdiet vel odio.
+            about_me: `Hello, My name is Canaan Seaton. I currently make my home in Evansville, IN where I work as a Control Systems Engineer. From a young age,
+            I have been fascinated with problem solving, making it my ambition to chase down problems that are difficult for the purpose of gaining new intuition.  In high school, this 
+            manifested itself in teaching myself higher level math when the school's curriculm had been exhausted. Now this desire to learn and grow, manifests itself in 
+            learning software design, from low level algorithm design to mastering the latest and greatest front end frameworks. To that end, my hope is to continue to 
+            pursue those engaging challenges so long as I am able. This being said, if you are an employer or an individual who has an intriguing problem or simply shares the same passions, be it 
+            designing a responsive and emersive website, building software to contribute to the open source community, or designing a full scale control system from the ground up, 
+            then I would love to get in touch with you to find out how can help!
             `,
             loaded: false,
             render_tags: false,
