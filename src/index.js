@@ -40,4 +40,18 @@ const App = () => {
   );
 };
 
-ReactDOM.render(<App />, document.getElementById('root'));
+window.addEventListener('load', () => {
+  let preloader = document.getElementById('pre-loader');
+  let appRoot = document.getElementById('root');
+
+  let preload = setTimeout(() => {
+    preloader.classList.add('animated', 'fadeOut');
+
+    let imageLoad = setTimeout(() => {
+      preloader.style.display = 'none';
+      ReactDOM.render(<App />, appRoot);
+    }, 650);
+
+  }, 1500);
+});
+
