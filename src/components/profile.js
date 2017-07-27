@@ -14,7 +14,7 @@ export default class Profile extends Component {
             learning software design, from low level algorithm design to mastering the latest and greatest front end frameworks. To that end, my hope is to continue to 
             pursue those engaging challenges so long as I am able. This being said, if you are an employer or an individual who has an intriguing problem or simply shares the same passions, be it 
             designing a responsive and emersive website, building software to contribute to the open source community, or designing full scale control systems from the ground up, 
-            then I would love to get in touch with you to find out how can help!
+            then I would love to get in touch with you to find out how I can help!
             `,
             loaded: false,
             render_tags: false,
