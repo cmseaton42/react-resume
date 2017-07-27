@@ -50,6 +50,17 @@ $Play: 'Play', sans-serif;
         font-size: 14px;
         
     }
+
+    &-sending {
+        font-family: Play;
+        padding: 0px 20px;
+        margin: 2px 0px;
+        color: #cd4400;
+
+        font-size: 20px;
+        font-weight: bold;
+        animation-duration: 3000ms;
+    }
 }
 
 .form-group {
@@ -92,6 +103,58 @@ $Play: 'Play', sans-serif;
         box-shadow: none;
     }
 
+}
+
+.contact-form-wrapper {
+    position: relative;
+}
+
+.contact-modal {
+    width: 300px;
+    height: 200px;
+    background: #cd4400;
+    box-shadow: 5px 10px 35px -5px black;
+    position: absolute;
+    right: calc(50% - 150px);
+    top: calc(50% - 100px);
+    border-radius: 5px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &-content {
+        width: 100%;
+        height: 100%;
+        color: white;
+        font-family: Play;
+        font-size: 30px;
+        position: relative;
+
+        .contact-modal-close {
+            position: absolute;
+            right: 10px;
+            top: 0px;
+            color: white;
+            font-size: 30px;
+
+            &:hover {
+                cursor: pointer;
+                transform: scale(1.15);
+                transition: transform 200ms ease-in-out;
+            }
+        }
+
+        .fa-thumbs-up {
+            padding-top: 20px;
+            font-size: 50px;
+        }
+
+        .fa-thumbs-down {
+            padding-top: 20px;
+            font-size: 50px;
+        }
+    }
 }
 
 @media (max-width: 790px) {
