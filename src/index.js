@@ -40,6 +40,8 @@ const App = () => {
   );
 };
 
+
+// Preload and then mount App
 window.addEventListener('load', () => {
   let preloader = document.getElementById('pre-loader');
   let appRoot = document.getElementById('root');
