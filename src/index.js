@@ -35,6 +35,7 @@ const App = () => {
       <Contact />
       <hr />
       <Footer />
+      <hr />
     </div>
   );
 };

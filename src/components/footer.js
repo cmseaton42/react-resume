@@ -24,7 +24,7 @@ export default class Footer extends Component {
 
     renderIcons() {
         return this.state.accounts.map((account, index) => {
-            return <Icon {...account} />
+            return <Icon key={index} {...account} />
         });
     }
 
