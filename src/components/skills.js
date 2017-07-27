@@ -62,7 +62,7 @@ export default class SkillDetail extends Component {
                         background: '#d3d3d3',
                         progress: '#cd4400'
                     },
-                    width: 6,
+                    width: 5,
                 },
                 text: {
                     X: 60,
