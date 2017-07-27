@@ -10,6 +10,8 @@ import SkillDetail from './components/skills'
 import Experience from './components/experience'
 import Profile from './components/profile'
 import Stats from './components/stats'
+import Contact from './components/contact'
+import Footer from './components/footer'
 
 const App = () => {
   return (
@@ -29,6 +31,10 @@ const App = () => {
       <Stats />
       <hr />
       <Experience />
+      <hr />
+      <Contact />
+      <hr />
+      <Footer />
     </div>
   );
 };

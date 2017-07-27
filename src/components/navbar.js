@@ -15,7 +15,7 @@ export default class Navbar extends Component {
                 'Profile',
                 'Skills',
                 'Experience',
-                //'Contact',
+                'Contact',
             ],
             active: 'Home',
             navStyle: 'navbar-tansparent'
@@ -57,6 +57,7 @@ export default class Navbar extends Component {
                             <li className="nav-item"><a className="nav-link" href="#Profile">Profile</a></li>
                             <li className="nav-item"><a className="nav-link" href="#Skills">Skills</a></li>
                             <li className="nav-item"><a className="nav-link" href="#Experience">Experience</a></li>
+                            <li className="nav-item"><a className="nav-link" href="#Contact">Contact</a></li>
                         </Scrollspy>
                     </div>
                 </nav>

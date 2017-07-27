@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css?family=Play');
+
+$Play: 'Play', sans-serif;
+
+.cmpnt-contact {
+    padding: 30px 10px;
+}
+
+.map-wrapper {
+    display: flex;
+    justify-content: center;
+
+    .map {
+        height: 400px;
+        width: 100%;
+
+        padding: 0px;
+        box-shadow: 5px 10px 35px -5px black;
+    }
+}
+
+.contact-header {
+    display: inline-block;
+    
+    &:after {
+        font-family:  FontAwesome;
+        content: '\f0e6';
+
+        position: absolute;
+        top: 5px;
+        right: -40px;
+        color: #cd4400;
+        font-size: 38px;
+        font-weight: 500;
+    }
+}
+
+.form-control {
+    border-radius: 2px;
+    &:focus {
+        border-color: #cd4400;
+    }
+
+    &-feedback {
+        font-family: Play;
+        padding: 0px 20px;
+        margin: 2px 0px;
+        color: #cd4400;
+
+        font-size: 14px;
+        
+    }
+}
+
+.form-group {
+    position: relative;
+    .fa-check {
+        position: absolute;
+        color: #5cb85c;
+        font-size: 25px;
+        top: 6px;
+        right: 8px;
+    }
+
+    .fa-times {
+        position: absolute;
+        color: #d76932;
+        font-size: 25px;
+        top: 6px;
+        right: 8px;
+    }
+}
+
+.btn-custom {
+    border-radius: 2px;
+    border: #cd4400 2px solid;
+    font-family: Play;
+    font-weight: bold;
+    
+    background: white;
+    color: #cd4400;
+
+    &:hover {
+        border: #cd4400 2px solid;
+        color: white;
+        background: #cd4400;
+        cursor: pointer;
+    }
+
+    &:active:focus,
+    &:focus {
+        box-shadow: none;
+    }
+
+}
+
+@media (max-width: 790px) {
+    .contact-header {
+        margin-top: 10px;
+        &:after {
+            font-family:  FontAwesome;
+            content: '\f0e6';
+
+            position: absolute;
+            top: 5px;
+            right: -25px;
+            color: #cd4400;
+            font-size: 25px;
+            font-weight: 500;
+        }
+    }
+
+    .map-wrapper {
+        .map {
+            height: 300px;
+            max-width: 500px;
+            box-shadow: 5px 10px 40px -10px black;
+        }
+    }
+
+}
