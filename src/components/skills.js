@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import RadialProgressBar from './radial-progress-bar'
 import Waypoint from 'react-waypoint'
 import FlipMove from 'react-flip-move'
+import MediaQuery from 'react-responsive'
 
 import '../../style/components/skills.scss'
 
@@ -46,7 +47,50 @@ export default class SkillDetail extends Component {
             filter: 'Front End',
             loaded: false,
             debounce: false,
-            class: '' 
+            class: '',
+            size: 'desktop',
+            mobile_options: {
+                height: 120,
+                width: 120,
+                center: {
+                    X: 60,
+                    Y: 60,
+                },
+                radius: 50,
+                stroke: {
+                    color: {
+                        background: '#d3d3d3',
+                        progress: '#cd4400'
+                    },
+                    width: 6,
+                },
+                text: {
+                    X: 60,
+                    Y: 60,
+                    fontsize: 11,
+                }
+            },
+            desktop_options: {
+                height: 200,
+                width: 200,
+                center: {
+                    X: 100,
+                    Y: 100,
+                },
+                radius: 80,
+                stroke: {
+                    color: {
+                        background: '#d3d3d3',
+                        progress: '#cd4400'
+                    },
+                    width: 7,
+                },
+                text: {
+                    X: 100,
+                    Y: 100,
+                    fontsize: 15,
+                }
+            }
         }
 
         this.renderSkills = this.renderSkills.bind(this);
@@ -54,29 +98,7 @@ export default class SkillDetail extends Component {
         this.clickHandler = this.clickHandler.bind(this);
     }
 
-    renderSkills() {
-        const options = {
-            height: 200,
-            width: 200,
-            center: {
-                X: 100,
-                Y: 100,
-            },
-            radius: 80,
-            stroke: {
-                color: {
-                    background: '#d3d3d3',
-                    progress: '#cd4400'
-                },
-                width: 7,
-            },
-            text: {
-                X: 100,
-                Y: 100,
-                fontsize: 15,
-            }
-        }
-
+    renderSkills(options) {
         let filtered = this.state.skills.filter(skill => {
             return skill.category[this.state.filter] === true;
         });
@@ -147,16 +169,33 @@ export default class SkillDetail extends Component {
                         </ul>
                     </div>
                 </div>
-                <div >
+                      
+                <MediaQuery query='(min-device-width: 790px)'>
+                    <div > 
                     <FlipMove className='d-flex flex-wrap justify-content-center' 
-                        maintainContainerHeight={true} 
-                        leaveAnimation={customLeaveAnimation}
-                        enterAnimation={customEnterAnimation}
-                        duration={500}
-                    >
-                            {this.renderSkills()}
+                            maintainContainerHeight={true} 
+                            leaveAnimation={customLeaveAnimation}
+                            enterAnimation={customEnterAnimation}
+                            duration={500}
+                        >
+                        
+                        {this.renderSkills(this.state.desktop_options)}
                     </FlipMove>
-                </div>
+                    </div>
+                </MediaQuery>
+                <MediaQuery query='(max-device-width: 790px)'>
+                    <div > 
+                    <FlipMove className='d-flex flex-wrap justify-content-center' 
+                            maintainContainerHeight={true} 
+                            leaveAnimation={customLeaveAnimation}
+                            enterAnimation={customEnterAnimation}
+                            duration={500}
+                        >
+                        {this.renderSkills(this.state.mobile_options)}
+                    </FlipMove>
+                    </div>
+                </MediaQuery>  
+                
             </div>
         )
     }

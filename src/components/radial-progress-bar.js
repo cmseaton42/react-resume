@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import Waypoint from 'react-waypoint'
 
+import '../../style/components/radial-progress-bar.scss'
+
 export default class RadialProgressBar extends Component {
     constructor() {
         super();
@@ -40,14 +42,6 @@ export default class RadialProgressBar extends Component {
         const { options } = this.props;
 
         const base = {
-            msTransformOrigin: '50% 50%',
-            MozTransformOrigin: '50% 50%',
-            WebkitTransformOrigin: '50% 50%',
-            transformOrigin: '50% 50%',
-            msTransform: 'rotateZ(-90deg)',
-            MozTransform: 'rotateZ(-90deg)',
-            WebkitTransform: 'rotateZ(-90deg)',
-            transform: 'rotateZ(-90deg)',
             fill: 'transparent', 
             strokeWidth: `${options.stroke.width}px`,
             stroke: `${options.stroke.color.background}`,
@@ -57,14 +51,6 @@ export default class RadialProgressBar extends Component {
         }
 
         const progress = {
-            msTransformOrigin: '50% 50%',
-            MozTransformOrigin: '50% 50%',
-            WebkitTransformOrigin: '50% 50%',
-            transformOrigin: '50% 50%',
-            msTransform: 'rotateZ(-90deg)',
-            MozTransform: 'rotateZ(-90deg)',
-            WebkitTransform: 'rotateZ(-90deg)',
-            transform: 'rotateZ(-90deg)',
             fill: 'transparent',
             strokeWidth: `${options.stroke.width}px`,
             stroke: `${options.stroke.color.progress}`,
@@ -81,7 +67,7 @@ export default class RadialProgressBar extends Component {
                 <svg height={options.height} width={options.width} style={{ background: 'transparent' }}>
                     <circle cx={options.center.X} cy={options.center.Y}
                         r={options.radius} style={base} />
-                    <circle cx={options.center.X} cy={options.center.Y}
+                    <circle  cx={options.center.X} cy={options.center.Y}
                         r={options.radius} style={progress} />
                     <text x={options.text.X} y={options.text.Y} textAnchor="middle"
                         fontWeight="bold" fontFamily="sans-serif"
