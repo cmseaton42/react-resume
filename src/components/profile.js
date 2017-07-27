@@ -12,6 +12,7 @@ export default class Profile extends Component {
             `,
             loaded: false,
             render_tags: false,
+            style: 'dnone',
             head_style: '',
             pic_style: '',
             am_style: ''
@@ -23,7 +24,7 @@ export default class Profile extends Component {
     componentDidMount() {
         const pic = this.refs.profile_pic;
 
-        pic.addEventListener('animationend', () => this.setState({ render_tags:true }));
+        pic.addEventListener('animationend', () => this.setState({ render_tags: true }));
     }
 
     onEnterHandler() {
@@ -32,7 +33,8 @@ export default class Profile extends Component {
                 loaded: true,
                 head_style: 'animated zoomIn',
                 pic_style: 'animated slideInLeft',
-                am_style: 'animated slideInRight'
+                am_style: 'animated slideInRight',
+                style: ''
             });
         }
     }
@@ -56,8 +58,9 @@ export default class Profile extends Component {
     render() {
         return (
             <div id="Profile" className="cmpnt-profile">
+                <Waypoint onEnter={this.onEnterHandler} />
                 <div className="container text-center">
-                    <div className="row align-items-center justify-content-center">
+                    <div className={`row align-items-center justify-content-center ${this.state.style}`}>
                         <div ref="profile_pic" className={`col-sm-12 col-md-5 ${this.state.pic_style}`}>
                             <div className="profile-pic-wrapper">
                                 <div className="profile-pic">
@@ -67,7 +70,7 @@ export default class Profile extends Component {
                         </div>
                         <div className={`col-sm-12 col-md-7 align-self-start ${this.state.am_style}`}>
                             <div className="text-center">
-                                <div className={`header profile-header ${this.state.head_style}`}><Waypoint onEnter={this.onEnterHandler} />About Me</div>
+                                <div className={`header profile-header ${this.state.head_style}`}>About Me</div>
                             </div>
                             <div className="about-me-wrapper">
                                 <p className="about-me-inner">{this.state.about_me}</p>

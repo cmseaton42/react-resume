@@ -10,12 +10,13 @@
     background: #4c4c4c;
 
     margin: 20px 5px;
+    transition: all 750ms ease-out;
 
     &:hover {
         transform: rotateZ(359deg);
         border: #4c4c4c 2px solid;
         background: #ededed;
-        transition: all 500ms ease-out;
+        transition: all 750ms ease-out;
     }
 
     a {

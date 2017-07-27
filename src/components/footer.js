@@ -16,10 +16,12 @@ export default class Footer extends Component {
                 { icon: 'twitter', link: 'https://twitter.com/cmseaton42'},
                 { icon: 'codepen', link: 'https://codepen.io/cmseaton42/'}
             ],
-            loaded: false
+            loaded: false,
+            style: 'dnone'
         }
 
         this.renderIcons = this.renderIcons.bind(this);
+        this.onEnter = this.onEnter.bind(this);
     }
 
     renderIcons() {
@@ -28,12 +30,21 @@ export default class Footer extends Component {
         });
     }
 
+    onEnter() {
+        if (!this.state.loaded) {
+            this.setState({
+                loaded: true,
+                style: 'animated fadeIn'
+            });
+        }
+    }
 
     render() {
 
         return (
             <div className="cmpnt-footer container">
-                <div className="row align-items-center justify-content-center">
+                <Waypoint onEnter={this.onEnter} />
+                <div className={`row align-items-center justify-content-center ${this.state.style}`}>
                         {this.renderIcons()}
                 </div>
             </div>
