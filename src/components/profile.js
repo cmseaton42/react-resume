@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
-import Waypoint from 'react-waypoint'
+import React, { Component } from "react";
+import Waypoint from "react-waypoint";
 
-import '../../style/components/profile.scss'
+import "../../style/components/profile.scss";
 
 export default class Profile extends Component {
     constructor() {
@@ -18,11 +18,11 @@ export default class Profile extends Component {
             `,
             loaded: false,
             render_tags: false,
-            style: 'dnone',
-            head_style: '',
-            pic_style: '',
-            am_style: ''
-        }
+            style: "dnone",
+            head_style: "",
+            pic_style: "",
+            am_style: ""
+        };
 
         this.onEnterHandler = this.onEnterHandler.bind(this);
     }
@@ -30,17 +30,19 @@ export default class Profile extends Component {
     componentDidMount() {
         const pic = this.refs.profile_pic;
 
-        pic.addEventListener('animationend', () => this.setState({ render_tags: true }));
+        pic.addEventListener("animationend", () =>
+            this.setState({ render_tags: true })
+        );
     }
 
     onEnterHandler() {
         if (!this.state.loaded) {
             this.setState({
                 loaded: true,
-                head_style: 'animated zoomIn',
-                pic_style: 'animated slideInLeft',
-                am_style: 'animated slideInRight',
-                style: ''
+                head_style: "animated zoomIn",
+                pic_style: "animated slideInLeft",
+                am_style: "animated slideInRight",
+                style: ""
             });
         }
     }
@@ -48,14 +50,12 @@ export default class Profile extends Component {
     renderProfileTags() {
         return (
             <div className="pic-tags">
-                <div className="profile-pic-tag profile-me">
-                    Me             
-                </div>
+                <div className="profile-pic-tag profile-me">Me</div>
                 <div className="profile-pic-tag profile-wife">
-                    My Beautiful Wife          
+                    My Beautiful Wife
                 </div>
                 <div className="profile-pic-tag profile-son">
-                    My Little Baller             
+                    My Little Baller
                 </div>
             </div>
         );
@@ -66,20 +66,39 @@ export default class Profile extends Component {
             <div id="Profile" className="cmpnt-profile">
                 <Waypoint onEnter={this.onEnterHandler} />
                 <div className="container text-center">
-                    <div className={`row align-items-center justify-content-center ${this.state.style}`}>
-                        <div ref="profile_pic" className={`col-sm-12 col-md-5 ${this.state.pic_style}`}>
+                    <div
+                        className={`row align-items-center justify-content-center ${this
+                            .state.style}`}
+                    >
+                        <div
+                            ref="profile_pic"
+                            className={`col-sm-12 col-md-5 ${this.state
+                                .pic_style}`}
+                        >
                             <div className="profile-pic-wrapper">
                                 <div className="profile-pic">
-                                    {this.state.render_tags ? this.renderProfileTags() : null}
+                                    {this.state.render_tags
+                                        ? this.renderProfileTags()
+                                        : null}
                                 </div>
                             </div>
                         </div>
-                        <div className={`col-sm-12 col-md-7 align-self-start ${this.state.am_style}`}>
+                        <div
+                            className={`col-sm-12 col-md-7 align-self-start ${this
+                                .state.am_style}`}
+                        >
                             <div className="text-center">
-                                <div className={`header profile-header ${this.state.head_style}`}>About Me</div>
+                                <div
+                                    className={`header profile-header ${this
+                                        .state.head_style}`}
+                                >
+                                    About Me
+                                </div>
                             </div>
                             <div className="about-me-wrapper">
-                                <p className="about-me-inner">{this.state.about_me}</p>
+                                <p className="about-me-inner">
+                                    {this.state.about_me}
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -87,5 +106,4 @@ export default class Profile extends Component {
             </div>
         );
     }
-
 }

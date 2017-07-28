@@ -1,9 +1,9 @@
-import React, { Component } from 'react'
-import Waypoint from 'react-waypoint'
-import Map from './map'
-import validator from 'validator'
-import humanize from 'humanize'
-import '../../style/components/contact.scss'
+import React, { Component } from "react";
+import Waypoint from "react-waypoint";
+import Map from "./map";
+import validator from "validator";
+import humanize from "humanize";
+import "../../style/components/contact.scss";
 
 export default class Contact extends Component {
     constructor() {
@@ -25,27 +25,27 @@ export default class Contact extends Component {
                 }
             },
             loaded: false,
-            left_style: 'dnone',
-            right_style: 'dnone',
-            head_style: 'dnone',
+            left_style: "dnone",
+            right_style: "dnone",
+            head_style: "dnone",
             message_sent: false,
             show_modal: false,
             sending: false,
             form: {
                 name: {
-                    value: '',
+                    value: "",
                     isValid: false
                 },
                 email: {
-                    value: '',
+                    value: "",
                     isValid: false
                 },
                 message: {
-                    value: '',
+                    value: "",
                     isValid: true
                 }
             }
-        }
+        };
 
         this.onEnter = this.onEnter.bind(this);
         this.submitHandler = this.submitHandler.bind(this);
@@ -60,9 +60,9 @@ export default class Contact extends Component {
         if (!this.state.loaded) {
             this.setState({
                 loaded: true,
-                left_style: 'animated slideInLeft',
-                right_style: 'animated slideInRight',
-                head_style: 'animated zoomIn'
+                left_style: "animated slideInLeft",
+                right_style: "animated slideInRight",
+                head_style: "animated zoomIn"
             });
         }
     }
@@ -76,26 +76,23 @@ export default class Contact extends Component {
 
             if (validator.isLength(form.name.value, { min: 5 }))
                 form.name.isValid = true;
-            else 
-                form.name.isValid = false;
+            else form.name.isValid = false;
 
-            this.setState({ form })
+            this.setState({ form });
         }
     }
 
     emailChange(event) {
-        if(!this.state.sending) {
+        if (!this.state.sending) {
             const { value } = event.target;
             let { form } = this.state;
 
             form.email.value = value;
 
-            if (validator.isEmail(form.email.value))
-                form.email.isValid = true;
-            else 
-                form.email.isValid = false;
+            if (validator.isEmail(form.email.value)) form.email.isValid = true;
+            else form.email.isValid = false;
 
-            this.setState({ form })
+            this.setState({ form });
         }
     }
 
@@ -108,10 +105,9 @@ export default class Contact extends Component {
 
             if (validator.isLength(form.message.value, { min: 25 }))
                 form.message.isValid = true;
-            else 
-                form.message.isValid = false;
+            else form.message.isValid = false;
 
-            this.setState({ form })
+            this.setState({ form });
         }
     }
 
@@ -127,25 +123,36 @@ export default class Contact extends Component {
         if (form.name.isValid && form.email.isValid && form.message.isValid) {
             this.setState({ sending: true });
 
-            this.sendEmail((status) => {
-                form.name.value = '';
-                form.email.value = '';
-                form.message.value = '';
+            this.sendEmail(status => {
+                form.name.value = "";
+                form.email.value = "";
+                form.message.value = "";
                 form.message.isValid = true;
                 const message_sent = status;
                 const show_modal = true;
-                const sending = false
+                const sending = false;
 
                 this.setState({ form, message_sent, show_modal, sending });
             });
         }
-
     }
 
     sendEmail(cb) {
         const { form } = this.state;
-        emailjs.send("gmail", "contact_form", {"email": form.email.value,"name": form.name.value,"message": form.message.value})
-            .then((response) => { cb(true); }, (err) => { cb(false); })
+        emailjs
+            .send("gmail", "contact_form", {
+                email: form.email.value,
+                name: form.name.value,
+                message: form.message.value
+            })
+            .then(
+                response => {
+                    cb(true);
+                },
+                err => {
+                    cb(false);
+                }
+            );
     }
 
     closeModal() {
@@ -161,93 +168,144 @@ export default class Contact extends Component {
             <div id="Contact" className="cmpnt-contact container">
                 <Waypoint onEnter={this.onEnter} />
                 <div className="row align-items-center justify-content-center">
-                    <div className={`col-sm-12 col-md-6 map-wrapper ${this.state.left_style}`}>
+                    <div
+                        className={`col-sm-12 col-md-6 map-wrapper ${this.state
+                            .left_style}`}
+                    >
                         <div className="map">
                             <Map {...map_data} />
                         </div>
                     </div>
-                    <div className={`col-sm-12 col-md-6 contact-form-wrapper align-self-start ${this.state.right_style}`}>
+                    <div
+                        className={`col-sm-12 col-md-6 contact-form-wrapper align-self-start ${this
+                            .state.right_style}`}
+                    >
                         <div className="text-center">
-                            <div className={`header contact-header ${this.state.head_style}`}><Waypoint onEnter={this.onEnterHandler} />Connect with Me</div>
+                            <div
+                                className={`header contact-header ${this.state
+                                    .head_style}`}
+                            >
+                                <Waypoint
+                                    onEnter={this.onEnterHandler}
+                                />Connect with Me
+                            </div>
                         </div>
                         <div className="text-left">
                             <form onSubmit={this.submitHandler}>
                                 <div className="form-group">
-                                    <input className="form-control" 
-                                    id="name" 
-                                    type="text" 
-                                    placeholder="Name"
-                                    onChange={this.nameChange}
-                                    value={form.name.value} />
-                                    {(form.name.isValid && form.name.value !== '') ?
-                                        (<i className="fa fa-check"></i>) : (null)}
+                                    <input
+                                        className="form-control"
+                                        id="name"
+                                        type="text"
+                                        placeholder="Name"
+                                        onChange={this.nameChange}
+                                        value={form.name.value}
+                                    />
+                                    {form.name.isValid && form.name.value !== ""
+                                        ? <i className="fa fa-check" />
+                                        : null}
 
-                                    {(!form.name.isValid && form.name.value !== '') ?
-                                        (<i className="fa fa-times"></i>) : (null)}
+                                    {!form.name.isValid &&
+                                    form.name.value !== ""
+                                        ? <i className="fa fa-times" />
+                                        : null}
 
-                                    {(!form.name.isValid && form.name.value !== '') ?
-                                        (<div className="form-control-feedback">
-                                            Please Enter Your Name, Thanks!
-                                        </div>) : (null)}
-                                </div> 
-
-                                <div className="form-group">
-                                    <input className="form-control form-control-success" 
-                                    id="email" 
-                                    type="email" 
-                                    placeholder="Email"
-                                    onChange={this.emailChange}
-                                    value={form.email.value} />
-                                    {(form.email.isValid && form.email.value !== '') ?
-                                        (<i className="fa fa-check"></i>) : (null)}
-
-                                    {(!form.email.isValid && form.email.value !== '') ?
-                                        (<i className="fa fa-times"></i>) : (null)}
-
-                                    {(!form.email.isValid && form.email.value !== '') ?
-                                        (<div className="form-control-feedback">
-                                            Please Provide a Valid Email, Thanks!
-                                        </div>) : (null)}
-                                </div> 
+                                    {!form.name.isValid &&
+                                    form.name.value !== ""
+                                        ? <div className="form-control-feedback">
+                                              Please Enter Your Name, Thanks!
+                                          </div>
+                                        : null}
+                                </div>
 
                                 <div className="form-group">
-                                    <textarea className="form-control" 
-                                    id="message" 
-                                    rows="5" 
-                                    placeholder="Message"
-                                    onChange={this.messageChange}
-                                    value={form.message.value}
-                                    ></textarea>
-                                    {(form.message.isValid && form.message.value !== '') ?
-                                        (<i className="fa fa-check"></i>) : (null)}
+                                    <input
+                                        className="form-control form-control-success"
+                                        id="email"
+                                        type="email"
+                                        placeholder="Email"
+                                        onChange={this.emailChange}
+                                        value={form.email.value}
+                                    />
+                                    {form.email.isValid &&
+                                    form.email.value !== ""
+                                        ? <i className="fa fa-check" />
+                                        : null}
 
-                                    {(!form.message.isValid && form.message.value !== null) ?
-                                        (<div className="form-control-feedback">
-                                            Tell Me About How I Can Help You! (25 Chars Min)
-                                        </div>) : (null)}
+                                    {!form.email.isValid &&
+                                    form.email.value !== ""
+                                        ? <i className="fa fa-times" />
+                                        : null}
+
+                                    {!form.email.isValid &&
+                                    form.email.value !== ""
+                                        ? <div className="form-control-feedback">
+                                              Please Provide a Valid Email,
+                                              Thanks!
+                                          </div>
+                                        : null}
+                                </div>
+
+                                <div className="form-group">
+                                    <textarea
+                                        className="form-control"
+                                        id="message"
+                                        rows="5"
+                                        placeholder="Message"
+                                        onChange={this.messageChange}
+                                        value={form.message.value}
+                                    />
+                                    {form.message.isValid &&
+                                    form.message.value !== ""
+                                        ? <i className="fa fa-check" />
+                                        : null}
+
+                                    {!form.message.isValid &&
+                                    form.message.value !== null
+                                        ? <div className="form-control-feedback">
+                                              Tell Me About How I Can Help You!
+                                              (25 Chars Min)
+                                          </div>
+                                        : null}
                                 </div>
 
                                 <div className="form-group text-center">
-                                    {this.state.sending ?
-                                        (<div className="form-control-sending animated infinite flash">
-                                            Sending...
-                                        </div>) : <button type="submit" className="btn btn-custom">Get Connected</button>}
+                                    {this.state.sending
+                                        ? <div className="form-control-sending animated infinite flash">
+                                              Sending...
+                                          </div>
+                                        : <button
+                                              type="submit"
+                                              className="btn btn-custom"
+                                          >
+                                              Get Connected
+                                          </button>}
                                 </div>
                             </form>
                         </div>
-                        
-                        {this.state.show_modal ? (
-                            <div className="contact-modal text-center animated slideInDown">
-                                <div className="contact-modal-content">
-                                    <div className="contact-modal-close" onClick={this.closeModal}><i className="fa fa-times"></i></div>
-                                    {this.state.message_sent ? <div><i className="fa fa-thumbs-up"></i></div> : <div><i className="fa fa-thumbs-down"></i></div>}
-                                    {this.state.message_sent ? 'Success! I will get back you to ASAP!' : 'Whoops! Looks like something went wrong. Try again soon!'}
-                                </div>
-                            </div>
-                        ) : (
-                            null
-                        )}
-                        
+
+                        {this.state.show_modal
+                            ? <div className="contact-modal text-center animated slideInDown">
+                                  <div className="contact-modal-content">
+                                      <div
+                                          className="contact-modal-close"
+                                          onClick={this.closeModal}
+                                      >
+                                          <i className="fa fa-times" />
+                                      </div>
+                                      {this.state.message_sent
+                                          ? <div>
+                                                <i className="fa fa-thumbs-up" />
+                                            </div>
+                                          : <div>
+                                                <i className="fa fa-thumbs-down" />
+                                            </div>}
+                                      {this.state.message_sent
+                                          ? "Success! I will get back you to ASAP!"
+                                          : "Whoops! Looks like something went wrong. Try again soon!"}
+                                  </div>
+                              </div>
+                            : null}
                     </div>
                 </div>
             </div>

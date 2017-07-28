@@ -9,14 +9,11 @@
     background-size: cover;
 }
 
-
 .experience-header {
     display: inline-block;
-    
     &:after {
-        font-family:  FontAwesome;
+        font-family: FontAwesome;
         content: '\f126';
-
         position: absolute;
         top: 8px;
         right: -22px;
@@ -28,11 +25,9 @@
 
 .education-header {
     display: inline-block;
-    
     &:after {
-        font-family:  FontAwesome;
+        font-family: FontAwesome;
         content: '\f19d';
-
         position: absolute;
         top: 12px;
         right: -30px;
@@ -45,9 +40,8 @@
 @media (max-width: 790px) {
     .experience-header {
         &:after {
-            font-family:  FontAwesome;
+            font-family: FontAwesome;
             content: '\f126';
-
             position: absolute;
             top: 9px;
             right: -12px;
@@ -56,12 +50,10 @@
             font-weight: 500;
         }
     }
-
     .education-header {
         &:after {
-            font-family:  FontAwesome;
+            font-family: FontAwesome;
             content: '\f19d';
-
             position: absolute;
             top: 10px;
             right: -22px;

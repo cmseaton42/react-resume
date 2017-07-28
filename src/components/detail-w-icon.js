@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
-import '../../style/components/detail-w-icon.scss'
+import React, { Component } from "react";
+import "../../style/components/detail-w-icon.scss";
 
-import Waypoint from 'react-waypoint'
+import Waypoint from "react-waypoint";
 
 export default class DetailWIcon extends Component {
     constructor() {
@@ -9,21 +9,20 @@ export default class DetailWIcon extends Component {
 
         this.state = {
             loaded: false,
-            style: 'dnone'
-        }
+            style: "dnone"
+        };
 
         this.onEnter = this.onEnter.bind(this);
     }
 
     onEnter() {
-        if (!this.state.loaded){
+        if (!this.state.loaded) {
             this.setState({
                 loaded: true,
                 style: `animated ${this.props.animation}`
-            })
+            });
         }
     }
-
 
     render() {
         const icon = `fa fa-${this.props.icon}`;
@@ -32,13 +31,12 @@ export default class DetailWIcon extends Component {
             <div className="cmpnt-detail-w-icon p-2">
                 <Waypoint onEnter={this.onEnter} />
                 <div className={this.state.style}>
-                    <i className={icon}></i>
-                    <p>{this.props.caption}</p>
+                    <i className={icon} />
+                    <p>
+                        {this.props.caption}
+                    </p>
                 </div>
             </div>
-        )
-
+        );
     }
-
-
 }

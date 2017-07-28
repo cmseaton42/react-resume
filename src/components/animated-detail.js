@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
-import Waypoint from 'react-waypoint'
+import React, { Component } from "react";
+import Waypoint from "react-waypoint";
 
-import '../../style/components/animated-detail.scss'
+import "../../style/components/animated-detail.scss";
 
 export default class AnimatedDetail extends Component {
     constructor() {
@@ -10,25 +10,23 @@ export default class AnimatedDetail extends Component {
         this.state = {
             loaded: false,
             progress: 0
-        }
+        };
 
         this.onEnter = this.onEnter.bind(this);
     }
 
     onEnter() {
-        if (!this.state.loaded){
+        if (!this.state.loaded) {
             const { progress } = this.props;
             let timeoutValue = 60;
 
-            if (progress > 500)
-                timeoutValue = 5
-            else if (progress > 100)
-                timeoutValue = 20
+            if (progress > 500) timeoutValue = 5;
+            else if (progress > 100) timeoutValue = 20;
 
             this.loadTimer = setInterval(() => {
                 if (this.state.progress < this.props.progress) {
                     this.setState({
-                       progress: this.state.progress + 1 
+                        progress: this.state.progress + 1
                     });
                 } else {
                     clearInterval(this.loadTimer);
@@ -36,8 +34,8 @@ export default class AnimatedDetail extends Component {
             }, timeoutValue);
 
             this.setState({
-                loaded: true,
-            })
+                loaded: true
+            });
         }
     }
 
@@ -53,10 +51,14 @@ export default class AnimatedDetail extends Component {
                 <Waypoint onEnter={this.onEnter} />
                 <div className="detail-container">
                     <p className="detail-count">
-                        <i className={icon}></i>  
-                        <span className="detail-count-number"> {this.state.progress} </span> 
+                        <i className={icon} />
+                        <span className="detail-count-number">
+                            {" "}{this.state.progress}{" "}
+                        </span>
                     </p>
-                    <p className="detail-caption">{this.props.caption}</p>
+                    <p className="detail-caption">
+                        {this.props.caption}
+                    </p>
                 </div>
             </div>
         );

@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Play');
-
-$Play: 'Play', sans-serif;
-
+$Play: 'Play',
+sans-serif;
 * {
     font-family: sans-serif;
 }
@@ -37,7 +36,7 @@ hr {
 }
 
 .header {
-    font-family:  $Play;
+    font-family: $Play;
     font-size: 50px;
     font-weight: 500;
     position: relative;

@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Play');
-
-$Play: 'Play', sans-serif;
-
+$Play: 'Play',
+sans-serif;
 .cmpnt-contact {
     padding: 30px 10px;
 }
@@ -9,11 +8,9 @@ $Play: 'Play', sans-serif;
 .map-wrapper {
     display: flex;
     justify-content: center;
-
     .map {
         height: 400px;
         width: 100%;
-
         padding: 0px;
         box-shadow: 5px 10px 35px -5px black;
     }
@@ -21,11 +18,9 @@ $Play: 'Play', sans-serif;
 
 .contact-header {
     display: inline-block;
-    
     &:after {
-        font-family:  FontAwesome;
+        font-family: FontAwesome;
         content: '\f0e6';
-
         position: absolute;
         top: 5px;
         right: -40px;
@@ -40,23 +35,18 @@ $Play: 'Play', sans-serif;
     &:focus {
         border-color: #cd4400;
     }
-
     &-feedback {
         font-family: Play;
         padding: 0px 20px;
         margin: 2px 0px;
         color: #cd4400;
-
         font-size: 14px;
-        
     }
-
     &-sending {
         font-family: Play;
         padding: 0px 20px;
         margin: 2px 0px;
         color: #cd4400;
-
         font-size: 20px;
         font-weight: bold;
         animation-duration: 3000ms;
@@ -72,7 +62,6 @@ $Play: 'Play', sans-serif;
         top: 6px;
         right: 8px;
     }
-
     .fa-times {
         position: absolute;
         color: #d76932;
@@ -87,22 +76,18 @@ $Play: 'Play', sans-serif;
     border: #cd4400 2px solid;
     font-family: Play;
     font-weight: bold;
-    
     background: white;
     color: #cd4400;
-
     &:hover {
         border: #cd4400 2px solid;
         color: white;
         background: #cd4400;
         cursor: pointer;
     }
-
     &:active:focus,
     &:focus {
         box-shadow: none;
     }
-
 }
 
 .contact-form-wrapper {
@@ -118,11 +103,9 @@ $Play: 'Play', sans-serif;
     right: calc(50% - 150px);
     top: calc(50% - 100px);
     border-radius: 5px;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
     &-content {
         width: 100%;
         height: 100%;
@@ -130,26 +113,22 @@ $Play: 'Play', sans-serif;
         font-family: Play;
         font-size: 30px;
         position: relative;
-
         .contact-modal-close {
             position: absolute;
             right: 10px;
             top: 0px;
             color: white;
             font-size: 30px;
-
             &:hover {
                 cursor: pointer;
                 transform: scale(1.15);
                 transition: transform 200ms ease-in-out;
             }
         }
-
         .fa-thumbs-up {
             padding-top: 20px;
             font-size: 50px;
         }
-
         .fa-thumbs-down {
             padding-top: 20px;
             font-size: 50px;
@@ -161,9 +140,8 @@ $Play: 'Play', sans-serif;
     .contact-header {
         margin-top: 15px;
         &:after {
-            font-family:  FontAwesome;
+            font-family: FontAwesome;
             content: '\f0e6';
-
             position: absolute;
             top: 5px;
             right: -25px;
@@ -172,7 +150,6 @@ $Play: 'Play', sans-serif;
             font-weight: 500;
         }
     }
-
     .map-wrapper {
         .map {
             height: 300px;
@@ -180,5 +157,4 @@ $Play: 'Play', sans-serif;
             box-shadow: 5px 10px 45px -15px black;
         }
     }
-
 }

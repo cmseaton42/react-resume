@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
-import Waypoint from 'react-waypoint'
+import React, { Component } from "react";
+import Waypoint from "react-waypoint";
 
-import '../../style/components/timeline-detail.scss'
+import "../../style/components/timeline-detail.scss";
 
 export default class TimelineDetail extends Component {
     constructor() {
@@ -9,14 +9,14 @@ export default class TimelineDetail extends Component {
 
         this.state = {
             loaded: false,
-            style: 'timeline-detail'
-        }
+            style: "timeline-detail"
+        };
 
         this.onEnterHandler = this.onEnterHandler.bind(this);
     }
 
     onEnterHandler() {
-        if(!this.state.loaded) {
+        if (!this.state.loaded) {
             this.setState({
                 loaded: true,
                 style: `timeline-detail animated ${this.props.animation}`
@@ -25,27 +25,29 @@ export default class TimelineDetail extends Component {
     }
 
     render() {
-        
         return (
             <div className="cmpnt-timeline-detail">
-                <Waypoint onEnter={this.onEnterHandler} bottomOffset='-50px' />
+                <Waypoint onEnter={this.onEnterHandler} bottomOffset="-50px" />
                 <div className={this.state.style}>
                     <div className="timeline-header">
-                        <p className="timeline-title">{this.props.title}</p>
+                        <p className="timeline-title">
+                            {this.props.title}
+                        </p>
                         <p className="timeline-time">
-                            <i className="fa fa-calendar"></i>
-                            <em> {this.props.timespan}</em>
+                            <i className="fa fa-calendar" />
+                            <em>
+                                {" "}{this.props.timespan}
+                            </em>
                         </p>
                     </div>
 
                     <p className="timeline-description">
-                    {this.props.description} 
+                        {this.props.description}
                     </p>
 
-                    <div className="timeline-decorator"></div>
+                    <div className="timeline-decorator" />
                 </div>
             </div>
         );
     }
-
 }

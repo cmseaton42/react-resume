@@ -4,35 +4,28 @@ $secondary: #cd4400;
     padding: 0px;
     margin: 0px 10px 0px 30px;
     position: relative;
-
     border-left: $primary 2px dashed;
     animation-delay: 200ms;
     animation-duration: 1100ms;
-
     .timeline-header {
         padding: 0px 15px 0px 30px;
         margin: 0px;
-
         .timeline-title {
             font-size: 25px;
             font-weight: bold;
-
             padding-bottom: 0px;
             margin-bottom: 0px;
         }
-
         .timeline-time {
             color: $secondary;
             margin-bottom: 0px;
             padding-left: 10px;
         }
     }
-
     .timeline-description {
         padding: 10px 15px 10px 35px;
         margin: 0px;
     }
-
     .timeline-decorator {
         position: absolute;
         top: 0;
@@ -45,13 +38,11 @@ $secondary: #cd4400;
     }
 }
 
-
 @media (max-width: 790px) {
     .timeline-detail {
         .timeline-header {
             padding: 0px 15px 0px 30px;
             margin: 0px;
-
             .timeline-title {
                 font-size: 19px;
                 font-weight: bold;
