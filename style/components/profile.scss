@@ -68,7 +68,7 @@ $Play: Play, sans-serif;
 
     .about-me-inner {
         font-size: 19px;
-        padding-top: 15px;
+        padding: 15px 0px 0px 20px;
     }
 }
 
@@ -120,6 +120,13 @@ $Play: Play, sans-serif;
     }
 }
 
+@media (max-width: 450px) {
+    .about-me-inner {
+        font-size: 19px;
+        padding: 15px 5px 0px 5px;
+    }
+}
+
 @keyframes tag-son {
     from {
         left: -200px;
@@ -128,8 +135,8 @@ $Play: Play, sans-serif;
         transform: scale(.5)
     }
     to {
-        left: -60px;
-        top: 245px;
+        left: -25px;
+        top: 255px;
         opacity: 1;
         transform: scale(1)
     }
