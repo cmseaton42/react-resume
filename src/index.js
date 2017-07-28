@@ -21,7 +21,7 @@ const App = () => {
       <div className="d-flex flex-row flex-wrap justify-content-between w-100">
         <DetailWIcon icon={'envelope'} caption={'cmseaton42@gmail.com'} animation={'slideInLeft'} />
         <DetailWIcon icon={'phone'} caption={'1 (931) 446-6573'} animation={'slideInUp'} />
-        <DetailWIcon icon={'map-marker'} caption={'5220 Stonehedge Dr, Evansville, IN 47715'} animation={'slideInRight'} />
+        <DetailWIcon icon={'map-marker'} caption={'Evansville, IN'} animation={'slideInRight'} />
       </div>
       <hr />
       <Profile />

@@ -12,14 +12,14 @@ export default class Contact extends Component {
         this.state = {
             map_data: {
                 center: {
-                    lat: 37.958075,
-                    lng: -87.488079
+                    lat: 37.975188,
+                    lng: -87.567486
                 },
                 zoom: 10,
                 marker: {
                     position: {
-                        lat: 37.958075,
-                        lng: -87.488079
+                        lat: 37.975188,
+                        lng: -87.567486
                     },
                     defaultAnimation: 2
                 }
