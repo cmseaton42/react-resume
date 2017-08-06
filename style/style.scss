@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Play');
-$Play: 'Play',
-sans-serif;
+$Play: 'Play', sans-serif;
 * {
     font-family: sans-serif;
 }
@@ -45,5 +44,15 @@ hr {
 @media (max-width: 790px) {
     .header {
         font-size: 35px;
+    }
+}
+
+.github-link {
+    color: 'grey' !important;
+    text-decoration: none;
+
+    &:hover {
+        color: #cd4400;
+        text-decoration: none;
     }
 }

@@ -14,26 +14,13 @@ import Contact from "./components/contact";
 import Footer from "./components/footer";
 
 const App = () => {
-    return (
-        <div>
+    return <div>
             <Navbar />
             <Cover />
             <div className="d-flex flex-row flex-wrap justify-content-between w-100">
-                <DetailWIcon
-                    icon={"envelope"}
-                    caption={"cmseaton42@gmail.com"}
-                    animation={"slideInLeft"}
-                />
-                <DetailWIcon
-                    icon={"phone"}
-                    caption={"1 (931) 446-6573"}
-                    animation={"slideInUp"}
-                />
-                <DetailWIcon
-                    icon={"map-marker"}
-                    caption={"Evansville, IN"}
-                    animation={"slideInRight"}
-                />
+                <DetailWIcon icon={"envelope"} caption={"cmseaton42@gmail.com"} animation={"slideInLeft"} />
+                <DetailWIcon icon={"phone"} caption={"1 (931) 446-6573"} animation={"slideInUp"} />
+                <DetailWIcon icon={"map-marker"} caption={"Evansville, IN"} animation={"slideInRight"} />
             </div>
             <hr />
             <Profile />
@@ -48,8 +35,16 @@ const App = () => {
             <hr />
             <Footer />
             <hr />
-        </div>
-    );
+            <div className="text-center">
+                <p style={{ color: "grey" }}>
+                    The code for this site can be found on <a className="github-link" href="https://github.com/cmseaton42/react-resume">
+                        <span className="github-link">
+                            GitHub
+                        </span>
+                    </a>
+                </p>
+            </div>
+        </div>;
 };
 
 // Preload and then mount App
