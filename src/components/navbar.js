@@ -32,7 +32,7 @@ export default class Navbar extends Component {
 
     render() {
         return (
-            <div className="container-fluidcmpnt-navbar">
+            <div className="container-fluid cmpnt-navbar">
                 <Waypoint
                     onEnter={this.makeTransparent}
                     onLeave={this.makeSolid}
