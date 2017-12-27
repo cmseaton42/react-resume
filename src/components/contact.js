@@ -301,7 +301,7 @@ export default class Contact extends Component {
                                                 <i className="fa fa-thumbs-down" />
                                             </div>}
                                       {this.state.message_sent
-                                          ? "Success! I will get back you to ASAP!"
+                                          ? "Success! I will get back to you ASAP!"
                                           : "Whoops! Looks like something went wrong. Try again soon!"}
                                   </div>
                               </div>
