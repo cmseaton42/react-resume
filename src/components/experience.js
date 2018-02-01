@@ -11,8 +11,13 @@ export default class Experience extends Component {
         this.state = {
             workHistory: [
                 {
+                    title: "Control Systems Engineer (Bastian Solutions)",
+                    timespan: "January 22, 2018 - Present",
+                    description: `I design, program, and implement large scale Control Systems for Bastian Solutions, a leader in global Material Handling.`
+                },
+                {
                     title: "Control Systems Engineer (Preh IMA Automation)",
-                    timespan: "May, 2016 - Present",
+                    timespan: "May, 2016 - January 19, 2018",
                     description: `As a senior level Control Systems Engineer, I lead projects from the ground up. This spans from early customer
                     interaction all the way to final install.  I have led prelimary controls design efforts, designed software from the ground up, 
                     and and managed customer installs on a number of machines in this capacity. `
@@ -26,8 +31,7 @@ export default class Experience extends Component {
                     including several small to medium projects in the US and one abroad.`
                 },
                 {
-                    title:
-                        "Electrical Engineering Co-Op (Bridgestone Tire Company)",
+                    title: "Electrical Engineering Co-Op (Bridgestone Tire Company)",
                     timespan: "May 2013 - December 2013",
                     description: `During My Coop, I successfully led two separate efforts to convert older GE Hardware to
                      ControlLogix Systems. This included updating the drawings and rewriting the software for both systems.`
@@ -35,11 +39,9 @@ export default class Experience extends Component {
             ],
             education: [
                 {
-                    title:
-                        "Tennessee Technological University - B.S. Electrical Engineering",
+                    title: "Tennessee Technological University - B.S. Electrical Engineering",
                     timespan: "Fall 2009 - Fall 2013",
-                    description:
-                        "Emphasis: Control Systems Design and Telecommunication Systems"
+                    description: "Emphasis: Control Systems Design and Telecommunication Systems"
                 }
             ],
             exp_loaded: false,
@@ -56,17 +58,13 @@ export default class Experience extends Component {
 
     renderWorkHistory() {
         return this.state.workHistory.map((event, index) => {
-            return (
-                <TimelineDetail key={index} {...event} animation="flipInX" />
-            );
+            return <TimelineDetail key={index} {...event} animation="flipInX" />;
         });
     }
 
     renderEducation() {
         return this.state.education.map((event, index) => {
-            return (
-                <TimelineDetail key={index} {...event} animation="flipInX" />
-            );
+            return <TimelineDetail key={index} {...event} animation="flipInX" />;
         });
     }
 
@@ -95,26 +93,16 @@ export default class Experience extends Component {
                     <div className="row">
                         <div className="col-sm-12 col-md-6">
                             <div className="text-center">
-                                <div
-                                    className={`header experience-header ${this
-                                        .state.exp_style}`}
-                                >
-                                    <Waypoint
-                                        onEnter={this.loadExpHandler}
-                                    />Experience
+                                <div className={`header experience-header ${this.state.exp_style}`}>
+                                    <Waypoint onEnter={this.loadExpHandler} />Experience
                                 </div>
                             </div>
                             {this.renderWorkHistory()}
                         </div>
                         <div className="col-sm-12 col-md-6">
                             <div className="text-center">
-                                <div
-                                    className={`header education-header ${this
-                                        .state.edu_style}`}
-                                >
-                                    <Waypoint
-                                        onEnter={this.loadEduhandler}
-                                    />Education
+                                <div className={`header education-header ${this.state.edu_style}`}>
+                                    <Waypoint onEnter={this.loadEduhandler} />Education
                                 </div>
                             </div>
                             {this.renderEducation()}
