@@ -7,6 +7,7 @@
     "clean": "rimraf dist",
     "build": "set NODE_ENV=production && npm run clean && webpack -p",
     "serve": "set NODE_ENV=developement && webpack-dev-server",
+    "linter": "./node_modules/.bin/eslint . --ext .js",
     "deploy": "npm run build && surge --domain www.canaanseaton.com ./dist"
   },
   "repository": "https://github.com/StephenGrider/WebpackProject",
@@ -45,6 +46,8 @@
     "babel-preset-react": "^6.16.0",
     "css-loader": "^0.26.1",
     "dotenv-webpack": "^1.5.4",
+    "eslint": "^4.17.0",
+    "eslint-plugin-react": "^7.6.1",
     "html-webpack-plugin": "^2.24.1",
     "node-sass": "^4.5.3",
     "postcss": "^6.0.6",
