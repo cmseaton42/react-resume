@@ -13,14 +13,14 @@ export default class Stats extends Component {
                 {
                     caption: "LeetCode Challenges Solved",
                     icon: "code",
-                    progress: 36
+                    progress: 59
                 },
                 {
                     caption: "Projects Completed",
                     icon: "sitemap",
-                    progress: 17
+                    progress: 27
                 },
-                { caption: "Starbucks Consumed", icon: "coffee", progress: 531 }
+                { caption: "Starbucks Consumed", icon: "coffee", progress: 721 }
             ],
             loaded: false,
             style: "dnone"

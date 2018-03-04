@@ -11,18 +11,9 @@ export default class Contact extends Component {
 
         this.state = {
             map_data: {
-                center: {
-                    lat: 37.975188,
-                    lng: -87.567486
-                },
+                center: { lat: 39.940537, lng: -86.15667 },
                 zoom: 10,
-                marker: {
-                    position: {
-                        lat: 37.975188,
-                        lng: -87.567486
-                    },
-                    defaultAnimation: 2
-                }
+                marker: { position: { lat: 39.940537, lng: -86.15667 }, defaultAnimation: 2 }
             },
             loaded: false,
             left_style: "dnone",
@@ -32,18 +23,9 @@ export default class Contact extends Component {
             show_modal: false,
             sending: false,
             form: {
-                name: {
-                    value: "",
-                    isValid: false
-                },
-                email: {
-                    value: "",
-                    isValid: false
-                },
-                message: {
-                    value: "",
-                    isValid: true
-                }
+                name: { value: "", isValid: false },
+                email: { value: "", isValid: false },
+                message: { value: "", isValid: true }
             }
         };
 
@@ -74,8 +56,7 @@ export default class Contact extends Component {
 
             form.name.value = value;
 
-            if (validator.isLength(form.name.value, { min: 5 }))
-                form.name.isValid = true;
+            if (validator.isLength(form.name.value, { min: 5 })) form.name.isValid = true;
             else form.name.isValid = false;
 
             this.setState({ form });
@@ -103,8 +84,7 @@ export default class Contact extends Component {
 
             form.message.value = value;
 
-            if (validator.isLength(form.message.value, { min: 25 }))
-                form.message.isValid = true;
+            if (validator.isLength(form.message.value, { min: 25 })) form.message.isValid = true;
             else form.message.isValid = false;
 
             this.setState({ form });
@@ -168,26 +148,19 @@ export default class Contact extends Component {
             <div id="Contact" className="cmpnt-contact container">
                 <Waypoint onEnter={this.onEnter} />
                 <div className="row align-items-center justify-content-center">
-                    <div
-                        className={`col-sm-12 col-md-6 map-wrapper ${this.state
-                            .left_style}`}
-                    >
+                    <div className={`col-sm-12 col-md-6 map-wrapper ${this.state.left_style}`}>
                         <div className="map">
                             <Map {...map_data} />
                         </div>
                     </div>
                     <div
-                        className={`col-sm-12 col-md-6 contact-form-wrapper align-self-start ${this
-                            .state.right_style}`}
+                        className={`col-sm-12 col-md-6 contact-form-wrapper align-self-start ${
+                            this.state.right_style
+                        }`}
                     >
                         <div className="text-center">
-                            <div
-                                className={`header contact-header ${this.state
-                                    .head_style}`}
-                            >
-                                <Waypoint
-                                    onEnter={this.onEnterHandler}
-                                />Connect with Me
+                            <div className={`header contact-header ${this.state.head_style}`}>
+                                <Waypoint onEnter={this.onEnterHandler} />Connect with Me
                             </div>
                         </div>
                         <div className="text-left">
@@ -201,21 +174,19 @@ export default class Contact extends Component {
                                         onChange={this.nameChange}
                                         value={form.name.value}
                                     />
-                                    {form.name.isValid && form.name.value !== ""
-                                        ? <i className="fa fa-check" />
-                                        : null}
+                                    {form.name.isValid && form.name.value !== "" ? (
+                                        <i className="fa fa-check" />
+                                    ) : null}
 
-                                    {!form.name.isValid &&
-                                    form.name.value !== ""
-                                        ? <i className="fa fa-times" />
-                                        : null}
+                                    {!form.name.isValid && form.name.value !== "" ? (
+                                        <i className="fa fa-times" />
+                                    ) : null}
 
-                                    {!form.name.isValid &&
-                                    form.name.value !== ""
-                                        ? <div className="form-control-feedback">
-                                              Please Enter Your Name, Thanks!
-                                          </div>
-                                        : null}
+                                    {!form.name.isValid && form.name.value !== "" ? (
+                                        <div className="form-control-feedback">
+                                            Please Enter Your Name, Thanks!
+                                        </div>
+                                    ) : null}
                                 </div>
 
                                 <div className="form-group">
@@ -227,23 +198,19 @@ export default class Contact extends Component {
                                         onChange={this.emailChange}
                                         value={form.email.value}
                                     />
-                                    {form.email.isValid &&
-                                    form.email.value !== ""
-                                        ? <i className="fa fa-check" />
-                                        : null}
+                                    {form.email.isValid && form.email.value !== "" ? (
+                                        <i className="fa fa-check" />
+                                    ) : null}
 
-                                    {!form.email.isValid &&
-                                    form.email.value !== ""
-                                        ? <i className="fa fa-times" />
-                                        : null}
+                                    {!form.email.isValid && form.email.value !== "" ? (
+                                        <i className="fa fa-times" />
+                                    ) : null}
 
-                                    {!form.email.isValid &&
-                                    form.email.value !== ""
-                                        ? <div className="form-control-feedback">
-                                              Please Provide a Valid Email,
-                                              Thanks!
-                                          </div>
-                                        : null}
+                                    {!form.email.isValid && form.email.value !== "" ? (
+                                        <div className="form-control-feedback">
+                                            Please Provide a Valid Email, Thanks!
+                                        </div>
+                                    ) : null}
                                 </div>
 
                                 <div className="form-group">
@@ -255,57 +222,52 @@ export default class Contact extends Component {
                                         onChange={this.messageChange}
                                         value={form.message.value}
                                     />
-                                    {form.message.isValid &&
-                                    form.message.value !== ""
-                                        ? <i className="fa fa-check" />
-                                        : null}
+                                    {form.message.isValid && form.message.value !== "" ? (
+                                        <i className="fa fa-check" />
+                                    ) : null}
 
-                                    {!form.message.isValid &&
-                                    form.message.value !== null
-                                        ? <div className="form-control-feedback">
-                                              Tell Me About How I Can Help You!
-                                              (25 Chars Min)
-                                          </div>
-                                        : null}
+                                    {!form.message.isValid && form.message.value !== null ? (
+                                        <div className="form-control-feedback">
+                                            Tell Me About How I Can Help You! (25 Chars Min)
+                                        </div>
+                                    ) : null}
                                 </div>
 
                                 <div className="form-group text-center">
-                                    {this.state.sending
-                                        ? <div className="form-control-sending animated infinite flash">
-                                              Sending...
-                                          </div>
-                                        : <button
-                                              type="submit"
-                                              className="btn btn-custom"
-                                          >
-                                              Get Connected
-                                          </button>}
+                                    {this.state.sending ? (
+                                        <div className="form-control-sending animated infinite flash">
+                                            Sending...
+                                        </div>
+                                    ) : (
+                                        <button type="submit" className="btn btn-custom">
+                                            Get Connected
+                                        </button>
+                                    )}
                                 </div>
                             </form>
                         </div>
 
-                        {this.state.show_modal
-                            ? <div className="contact-modal text-center animated slideInDown">
-                                  <div className="contact-modal-content">
-                                      <div
-                                          className="contact-modal-close"
-                                          onClick={this.closeModal}
-                                      >
-                                          <i className="fa fa-times" />
-                                      </div>
-                                      {this.state.message_sent
-                                          ? <div>
-                                                <i className="fa fa-thumbs-up" />
-                                            </div>
-                                          : <div>
-                                                <i className="fa fa-thumbs-down" />
-                                            </div>}
-                                      {this.state.message_sent
-                                          ? "Success! I will get back to you ASAP!"
-                                          : "Whoops! Looks like something went wrong. Try again soon!"}
-                                  </div>
-                              </div>
-                            : null}
+                        {this.state.show_modal ? (
+                            <div className="contact-modal text-center animated slideInDown">
+                                <div className="contact-modal-content">
+                                    <div className="contact-modal-close" onClick={this.closeModal}>
+                                        <i className="fa fa-times" />
+                                    </div>
+                                    {this.state.message_sent ? (
+                                        <div>
+                                            <i className="fa fa-thumbs-up" />
+                                        </div>
+                                    ) : (
+                                        <div>
+                                            <i className="fa fa-thumbs-down" />
+                                        </div>
+                                    )}
+                                    {this.state.message_sent
+                                        ? "Success! I will get back to you ASAP!"
+                                        : "Whoops! Looks like something went wrong. Try again soon!"}
+                                </div>
+                            </div>
+                        ) : null}
                     </div>
                 </div>
             </div>
