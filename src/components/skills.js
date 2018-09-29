@@ -12,23 +12,23 @@ export default class SkillDetail extends Component {
 
         this.state = {
             skills: [
-                { title: "HTML5", level: 75, category: { "Front End": true } },
-                { title: "CSS3 / SASS", level: 80, category: { "Front End": true } },
-                { title: "React", level: 80, category: { "Front End": true } },
-                { title: "Handlebars", level: 65, category: { "Front End": true } },
-                { title: "Redux", level: 50, category: { "Front End": true } },
-                { title: "JS / ES6", level: 85, category: { "Front End": true, "Back End": true } },
-                { title: "JQuery", level: 85, category: { "Front End": true } },
+                { title: "HTML5", level: 85, category: { "Front End": true } },
+                { title: "CSS3 / SASS", level: 85, category: { "Front End": true } },
+                { title: "React", level: 90, category: { "Front End": true } },
+                { title: "Handlebars", level: 55, category: { "Front End": true } },
+                { title: "Redux", level: 55, category: { "Front End": true } },
+                { title: "JS / ES6", level: 97, category: { "Front End": true, "Back End": true } },
+                { title: "JQuery", level: 65, category: { "Front End": true } },
                 { title: "Bootstrap", level: 75, category: { "Front End": true } },
                 { title: "Git", level: 75, category: { "Front End": true, "Back End": true } },
-                { title: "Jest", level: 60, category: { "Front End": true, "Back End": true } },
+                { title: "Jest", level: 80, category: { "Front End": true, "Back End": true } },
                 { title: "MongoDB", level: 75, category: { "Back End": true } },
                 {
                     title: "SQL",
-                    level: 55,
+                    level: 50,
                     category: { "Back End": true, "Control Systems": true }
                 },
-                { title: "NodeJS", level: 75, category: { "Back End": true } },
+                { title: "NodeJS", level: 95, category: { "Back End": true } },
                 { title: "Express", level: 85, category: { "Back End": true } },
                 {
                     title: "Python",
@@ -37,13 +37,13 @@ export default class SkillDetail extends Component {
                 },
                 {
                     title: "VB.Net",
-                    level: 65,
+                    level: 45,
                     category: { "Back End": true, "Control Systems": true }
                 },
-                { title: "C++", level: 60, category: { "Back End": true } },
+                { title: "C++", level: 50, category: { "Back End": true } },
                 {
-                    title: "Gulp / Webpack",
-                    level: 60,
+                    title: "Webpack",
+                    level: 65,
                     category: { "Front End": true, "Back End": true }
                 },
                 { title: "Studio5000", level: 95, category: { "Control Systems": true } },
@@ -53,10 +53,10 @@ export default class SkillDetail extends Component {
                 { title: "Cognex", level: 95, category: { "Control Systems": true } },
                 { title: "Keyence", level: 80, category: { "Control Systems": true } },
                 { title: "Siemens S7", level: 60, category: { "Control Systems": true } },
-                { title: "TIA Portal", level: 70, category: { "Control Systems": true } },
+                { title: "TIA Portal", level: 60, category: { "Control Systems": true } },
                 { title: "Kinetix Servo", level: 70, category: { "Control Systems": true } },
                 { title: "PowerFlex Drives", level: 80, category: { "Control Systems": true } },
-                { title: "Autocad", level: 50, category: { "Control Systems": true } }
+                { title: "Autocad", level: 35, category: { "Control Systems": true } }
             ],
             filters: ["Front End", "Back End", "Control Systems"],
             filter: "Front End",
