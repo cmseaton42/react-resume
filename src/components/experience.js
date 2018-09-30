@@ -13,7 +13,7 @@ export default class Experience extends Component {
                 {
                     title: "Control Systems Engineer (Bastian Solutions)",
                     timespan: "January 22, 2018 - Present",
-                    description: `At Bastian, I am a member of a team that handles projects that are out of our company’s normal scope.  This means that the challenges we face daily are often brand new to Bastian and thus we rarely have anything to work from but rather lean on one another as a team address the problem head on.  In my time there, we have worked on everything from large scale system design to smaller R&D projects for some of the most forward-thinking companies in existence.`
+                    description: `At Bastian, I am a member of a team that handles projects that are out of our company’s normal scope.  This means that the challenges we face daily are often brand new to Bastian and thus we rarely have anything to work from but rather lean on one another as a team address the problem head on.  In my time here, we have worked on everything from large scale system design to smaller R&D projects for some of the most forward-thinking companies in existence.`
                 },
                 {
                     title: "Control Systems Engineer (Preh IMA Automation)",
