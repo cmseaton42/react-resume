@@ -13,7 +13,7 @@ export default class Experience extends Component {
                 {
                     title: "Control Systems Engineer (Bastian Solutions)",
                     timespan: "January 22, 2018 - Present",
-                    description: `I design, program, and implement large scale Control Systems for Bastian Solutions, a leader in global Material Handling.`
+                    description: `At Bastian, I am a member of a team that handles projects that are out of our company’s normal scope.  This means that the challenges we face daily are often brand new to Bastian and thus we rarely have anything to work from but rather lean on one another as a team address the problem head on.  In my time there, we have worked on everything from large scale system design to smaller R&D projects for some of the most forward-thinking companies in existence.`
                 },
                 {
                     title: "Control Systems Engineer (Preh IMA Automation)",
@@ -94,7 +94,8 @@ export default class Experience extends Component {
                         <div className="col-sm-12 col-md-6">
                             <div className="text-center">
                                 <div className={`header experience-header ${this.state.exp_style}`}>
-                                    <Waypoint onEnter={this.loadExpHandler} />Experience
+                                    <Waypoint onEnter={this.loadExpHandler} />
+                                    Experience
                                 </div>
                             </div>
                             {this.renderWorkHistory()}
@@ -102,7 +103,8 @@ export default class Experience extends Component {
                         <div className="col-sm-12 col-md-6">
                             <div className="text-center">
                                 <div className={`header education-header ${this.state.edu_style}`}>
-                                    <Waypoint onEnter={this.loadEduhandler} />Education
+                                    <Waypoint onEnter={this.loadEduhandler} />
+                                    Education
                                 </div>
                             </div>
                             {this.renderEducation()}
